@@ -1,16 +1,32 @@
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
+import { routing } from './app.routing';
+
+import { RecordService, RemoteControlService } from './_services';
+import { Bund18Component } from './bund18/bund18.component';
+import { Bund18recordComponent } from './bund18record/bund18record.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    routing,
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    Bund18Component,
+    Bund18recordComponent,
+  ],  
+  providers: [
+    RecordService,
+    RemoteControlService,
+    { provide: LOCALE_ID, useValue: 'zh-Hans'},
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

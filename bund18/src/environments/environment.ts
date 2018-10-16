@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  recordUrl: 'http://localhost:8000/api/bund18/record/',
+  remoteUrl: 'http://tunnel40011.remotuino.fullrank.cc:81/arduino/digital/',
 };
 
 /*
