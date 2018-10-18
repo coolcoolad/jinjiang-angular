@@ -2,6 +2,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -15,6 +16,7 @@ import { Bund18recordComponent } from './bund18record/bund18record.component';
     BrowserModule,
     HttpClientModule,
     routing,
+    NgxEchartsModule,
   ],
   declarations: [
     AppComponent,

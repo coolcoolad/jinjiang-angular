@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Record, RecordPost } from '../_models';
+import { Record, RecordPost, RecordStat } from '../_models';
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -27,6 +27,10 @@ export class RecordService {
   }  
 
   retrieve(id: number){
-      return this.http.get<Record>(`${environment.recordUrl}${id}/`, this.httpOptions);
+    return this.http.get<Record>(`${environment.recordUrl}${id}/`, this.httpOptions);
+  }
+
+  getDateStat() {
+    return this.http.get<RecordStat[]>(`${environment.statUrl}`, this.httpOptions);
   }
 }

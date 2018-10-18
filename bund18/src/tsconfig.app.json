@@ -2,7 +2,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "echats": ["node_modules/echarts/dist/echarts.min.js"],
+    }
   },
   "exclude": [
     "test.ts",
