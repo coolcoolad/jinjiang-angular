@@ -1,4 +1,14 @@
-.background-color {
+.bg img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg {
+  /* background-image: url('../../images/background.jpg'); */
+  background-size: cover;
+}
+
+/* .background-color {
     background-color: #2aa6c5;
 }
 * {
@@ -12,4 +22,4 @@
 .center {
   display: block;
   margin: auto;
-}
+} */

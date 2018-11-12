@@ -1,4 +1,4 @@
-
+<!-- 
 <div>
   <ul>
     <li *ngFor="let record of records">
@@ -8,15 +8,17 @@
       {{record.timestamp}}
     </li>
   </ul>
-</div>
+</div> -->
 
-<div>
+
+<!-- <div>
   <ul>
     <li *ngFor="let stat of stats">
       {{ stat.date_created }} : {{ stat.created_count }}
     </li>
   </ul>
-</div>
+</div> -->
+
 
 <button (click)="onRefresh()">Refresh</button>
 <div echarts [options]="options" (chartInit)="onChartInit($event)" class="demo-chart"></div>

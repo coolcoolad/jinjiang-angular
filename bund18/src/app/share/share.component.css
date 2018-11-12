@@ -1,0 +1,9 @@
+.bg img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bg {
+    /* background-image: url('../../images/background.jpg'); */
+    background-size: cover;
+}

@@ -1,0 +1,28 @@
+.bg-img {
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+}
+
+.parent{
+    position: relative;
+}
+
+.over-img{
+    position: absolute;
+    top: 60%;
+    left: 0%;
+}
+
+.transparent-over-button{
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}

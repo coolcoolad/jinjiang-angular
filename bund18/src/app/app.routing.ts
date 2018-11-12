@@ -2,9 +2,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { Bund18Component } from './bund18/bund18.component';
 import { Bund18recordComponent } from './bund18record/bund18record.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DisplayComponent } from './display/display.component';
+import { ShareComponent } from './share/share.component';
 
 const appRoutes: Routes = [
-  { path: 'bund18', component: Bund18Component },
+  { path: 'bund18/welcome', component:WelcomeComponent },
+  { path: 'bund18/shake', component: Bund18Component },
+  { path: 'bund18/display', component: DisplayComponent },
+  { path: 'bund18/share' , component:ShareComponent},
   { path: 'bund18/records', component: Bund18recordComponent },
 ];
 

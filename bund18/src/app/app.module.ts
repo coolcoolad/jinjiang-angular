@@ -10,6 +10,9 @@ import { routing } from './app.routing';
 import { RecordService, RemoteControlService } from './_services';
 import { Bund18Component } from './bund18/bund18.component';
 import { Bund18recordComponent } from './bund18record/bund18record.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DisplayComponent } from './display/display.component';
+import { ShareComponent } from './share/share.component';
 
 @NgModule({
   imports: [
@@ -22,6 +25,9 @@ import { Bund18recordComponent } from './bund18record/bund18record.component';
     AppComponent,
     Bund18Component,
     Bund18recordComponent,
+    WelcomeComponent,
+    DisplayComponent,
+    ShareComponent,
   ],  
   providers: [
     RecordService,
