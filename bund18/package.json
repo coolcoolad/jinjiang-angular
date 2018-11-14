@@ -23,6 +23,7 @@
     "@angular/router": "^6.1.0",
     "babel-polyfill": "^6.26.0",
     "chart.js": "^2.7.2",
+    "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "echarts": "^4.2.0-rc.2",
     "ng-cli-pug-loader": "^0.1.3",

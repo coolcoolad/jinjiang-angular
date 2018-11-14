@@ -19,6 +19,7 @@ export class Bund18Component implements OnInit {
     private router: Router,
   ) { }
 
+
   ngOnInit() {
   }
 
