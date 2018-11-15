@@ -1,6 +1,6 @@
 <div class="bg">
   <script src="../js/jquery.min.js"></script>
-  <script type="text/javascript" src="../../../node_modules/shake.js/shake.js"></script>
+  <!-- <script type="text/javascript" src="../../../node_modules/shake.js/shake.js"></script> -->
 <!--
   <img src="http://localhost:8000/media/shake-720x1280.png" alt="Can't load this image" >
 -->
@@ -8,6 +8,8 @@
 
   <!-- <button (click)="onClickLeft()">left</button> -->
   <button (click)="onClickShake()">shake</button>
+
+  <button>click test</button>
   <!-- <button (click)="onClickRight()">right</button> -->
 
   <script type="text/javascript">
@@ -23,7 +25,11 @@
         //shake event callback
         function shakeEventDidOccur () {
             //put your own code here etc.
-            onClickShake();
+            //how to call a ts function here
+            window.angularComponentRef.zone.run(()=>
+            {
+              window.angularComponentRef.componentFn("works");
+            });
         }
     };
   </script>
