@@ -7,29 +7,36 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class RemoteControlService {
-  constructor(http:HttpClient) { }
+  constructor(
+    private http:HttpClient,    
+  ) { }
+
+  public deviceNo: number;
+
+  private remoteControlUrl: string;
+
+  checkDeviceOnline() {
+    this.http.get(`${environment.devicesUrl}`).subscribe((msg:string)=>{
+      if(msg.indexOf("40045") != -1){
+        this.deviceNo = 40045;
+        this.remoteControlUrl = environment.remoteUrl;
+      }
+      else if(msg.indexOf("40055") != -1){
+        this.deviceNo = 40055;
+        this.remoteControlUrl = environment.backup_remoteUrl;
+        return true;
+      }
+      else{ 
+        this.remoteControlUrl = environment.remoteUrl;
+      }
+    });
+  }
 
   shakeOn() {
-
+    return this.http.get<string>(`${environment.remoteUrl}/1/`);
   }
 
   shakeOff() {
-
-  }
-
-  swipeLeftOn() {
-
-  }
-
-  swipeLeftOff() {
-
-  }
-
-  swipeRightOn() {
-
-  }
-
-  swipeRightOff() {
-    
+    return this.http.get<string>(`${environment.remoteUrl}/0/`);
   }
 }

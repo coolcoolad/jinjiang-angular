@@ -6,7 +6,9 @@ export const environment = {
   production: false,
   recordUrl: 'http://localhost:8000/api/bund18/record/',
   statUrl: 'http://localhost:8000/api/bund18/stat/',
-  remoteUrl: 'http://tunnel40011.remotuino.fullrank.top:81/arduino/digital/',
+  remoteUrl: 'http://tunnel40045.remotuino.wuzhanggui.shop:81/arduino/digital/30',
+  backup_remoteUrl: 'http://tunnel40055.remotuino.wuzhanggui.shop:81/arduino/digital/30',
+  devicesUrl: 'http://remotuino.wuzhanggui.shop:8080',
 };
 
 /*

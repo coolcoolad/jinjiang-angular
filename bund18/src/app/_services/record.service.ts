@@ -3,10 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Record, RecordPost, RecordStat } from '../_models';
 import { environment } from '../../environments/environment';
+import { stringLiteral } from 'babel-types';
 
 @Injectable()
 export class RecordService {
   constructor(private http:HttpClient) { }
+
+  private device: number;
 
   private httpOptions = {
     headers: new HttpHeaders({
