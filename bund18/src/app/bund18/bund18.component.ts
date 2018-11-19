@@ -36,10 +36,10 @@ export class Bund18Component implements OnInit, OnDestroy {
   }
 
   OnShake() {
-    alert("works");
+    this.onClickShake();
   }
 
-  public onClickShake() {
+  onClickShake() {
     console.log("on click shake button");
     var new_record: RecordPost = {
       device: 'bund18',
