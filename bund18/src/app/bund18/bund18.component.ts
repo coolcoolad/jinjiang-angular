@@ -59,8 +59,4 @@ export class Bund18Component implements OnInit, OnDestroy {
     this.router.navigate(['/bund18/display']);
   }
   
-  private ShakeDetect() {
-
-  }
-
 }
