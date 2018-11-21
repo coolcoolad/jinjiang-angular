@@ -22,21 +22,37 @@ export class Bund18Component implements OnInit, OnDestroy {
   ) {
     setTimeout(() => {
       this.router.navigate(['/bund18/display']);
-    }, 30000);
+    }, 10000);
   }  
 
   
   ngOnInit() {   
     this.shakeService.start();
-    window.addEventListener('shake', this.OnShake, false);
+    window.addEventListener('shake', ()=> {this.OnShake()}, false);
   }
 
   ngOnDestroy() {
-
+    window.removeEventListener('shake', null, false);
   }
 
   OnShake() {
-    this.onClickShake();
+    console.log("on click shake button");
+    var new_record: RecordPost = {
+      device: 'bund18',
+      operation: 'shake',
+      status: true
+    }
+
+    this.recordService.create(new_record).pipe(first()).subscribe(()=>{
+        console.log("add one record to server");
+      }
+    )
+
+    this.remoteControlService.shakeOn().pipe(first()).subscribe((resp)=>{
+      
+    });  
+    
+    this.router.navigate(['/bund18/display']);
   }
 
   onClickShake() {

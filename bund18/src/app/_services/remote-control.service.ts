@@ -16,7 +16,8 @@ export class RemoteControlService {
   private remoteControlUrl: string;
 
   checkDeviceOnline() {
-    this.http.get(`${environment.devicesUrl}`).subscribe((msg:string)=>{
+    this.http.get(`${environment.remoteUrl}`).subscribe((msg:string)=>{
+      console.log(msg);
       if(msg.indexOf("40045") != -1){
         this.deviceNo = 40045;
         this.remoteControlUrl = environment.remoteUrl;

@@ -7,9 +7,7 @@ import { stringLiteral } from 'babel-types';
 
 @Injectable()
 export class RecordService {
-  constructor(private http:HttpClient) { }
-
-  private device: number;
+  constructor(private http:HttpClient) { }  
 
   private httpOptions = {
     headers: new HttpHeaders({
