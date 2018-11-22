@@ -10,6 +10,7 @@
 
 .over-img{
   position: absolute;
-  top: 0%;
-  left: 0%;
+  max-width: 20%;
+  top: 10%;
+  left: 10%;
 }
