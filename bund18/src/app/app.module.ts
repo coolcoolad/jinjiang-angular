@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 
+import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
+
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
-import { RecordService, RemoteControlService } from './_services';
+import { RecordService } from './_services';
 import { Bund18Component } from './bund18/bund18.component';
 import { Bund18recordComponent } from './bund18record/bund18record.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -20,6 +22,7 @@ import { ShareComponent } from './share/share.component';
     HttpClientModule,
     routing,
     NgxEchartsModule,
+    Ng2DeviceDetectorModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -31,7 +34,6 @@ import { ShareComponent } from './share/share.component';
   ],  
   providers: [
     RecordService,
-    RemoteControlService,
     { provide: LOCALE_ID, useValue: 'zh-Hans'},
   ],
   bootstrap: [AppComponent]

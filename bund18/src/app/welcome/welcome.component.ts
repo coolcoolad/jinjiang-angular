@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {  } from '../_services/record.service';
+import { RecordService } from '../_services/record.service';
+import { BadgeRequest, Badge } from '../_models';
 // import { RemoteControlService } from '../_services/remote-control.service';
+import { Ng2DeviceService } from 'ng2-device-detector';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-welcome',
@@ -9,25 +12,31 @@ import {  } from '../_services/record.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit { 
-
-  deviceStat: boolean;
+  private deviceInfo;
 
   constructor(
     private router: Router,
-    //private rcService: RemoteControlService,
+    private recordService: RecordService,
+    private deviceService: Ng2DeviceService,
   ) { }
 
-  ngOnInit() {
-    this.CheckDevice();
-    
+  ngOnInit() {   
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    //console.log(this.deviceInfo);    
+    var badge: BadgeRequest = {
+      browser: `${this.deviceInfo.browser}`,
+      version: `${this.deviceInfo.browser_version}`,
+      device: `${this.deviceInfo.device}`,
+      os: `${this.deviceInfo.os}`,
+    }
+    //console.log(badge);
+    this.recordService.requestBadge(badge).pipe(first()).subscribe((resp)=>{
+      localStorage.setItem('badgeID', resp.id.toString());
+    });
   }
 
   onClickEntry() {
     console.log("on click the entry button");
     this.router.navigate(['/bund18/shake']);
-  }
-
-  CheckDevice() {
-    
-  }
+  } 
 }

@@ -5,10 +5,12 @@
 export const environment = {
   production: false,
   recordUrl: 'http://localhost:8000/api/bund18/record/',
-  statUrl: 'http://localhost:8000/api/bund18/stat/',
-  remoteUrl: 'http://tunnel40045.remotuino.wuzhanggui.shop:81/arduino/digital/30',
-  backup_remoteUrl: 'http://tunnel40055.remotuino.wuzhanggui.shop:81/arduino/digital/30',
-  devicesUrl: 'http://remotuino.wuzhanggui.shop:8080',
+  badgeUrl: 'http://localhost:8000/api/bund18/badge/',
+  shareUrl: 'http://localhost:8000/api/bund18/share/',
+  statUrl: 'http://localhost:8000/api/bund18/stat/',  
+  deviceCheckUrl: 'http://localhost:8000/api/bund18/device/check/',
+  deviceOnUrl: 'http://localhost:8000/api/bund18/device/on/',
+  deviceOffUrl: 'http://localhost:8000/api/bund18/device/off/',
 };
 
 /*
