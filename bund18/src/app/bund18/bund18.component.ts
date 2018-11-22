@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { RecordService } from '../_services/record.service';
-import { RemoteControlService } from '../_services/remote-control.service';
+//import { RemoteControlService } from '../_services/remote-control.service';
 import { ShakeService } from '../_services/shake.service';
 import { Record, RecordPost } from '../_models';
 import { Router } from '@angular/router';
@@ -16,13 +16,13 @@ export class Bund18Component implements OnInit, OnDestroy {
 
   constructor(
     private recordService: RecordService,
-    private remoteControlService: RemoteControlService,
+    // remoteControlService: RemoteControlService,
     private router: Router,
     private shakeService: ShakeService,
   ) {
-    setTimeout(() => {
-      this.router.navigate(['/bund18/display']);
-    }, 10000);
+    // setTimeout(() => {
+    //   this.router.navigate(['/bund18/display']);
+    // }, 15000);
   }  
 
   
@@ -36,8 +36,8 @@ export class Bund18Component implements OnInit, OnDestroy {
   }
 
   OnShake() {
-    console.log("on click shake button");
     var new_record: RecordPost = {
+      badgeID: parseInt(localStorage.getItem('badge')),
       device: 'bund18',
       operation: 'shake',
       status: true
@@ -45,34 +45,10 @@ export class Bund18Component implements OnInit, OnDestroy {
 
     this.recordService.create(new_record).pipe(first()).subscribe(()=>{
         console.log("add one record to server");
+        
+        this.router.navigate(['/bund18/display']);
       }
-    )
-
-    this.remoteControlService.shakeOn().pipe(first()).subscribe((resp)=>{
-      
-    });  
-    
-    this.router.navigate(['/bund18/display']);
+    )    
   }
 
-  onClickShake() {
-    console.log("on click shake button");
-    var new_record: RecordPost = {
-      device: 'bund18',
-      operation: 'shake',
-      status: true
-    }
-
-    this.recordService.create(new_record).pipe(first()).subscribe(()=>{
-        console.log("add one record to server");
-      }
-    )
-
-    this.remoteControlService.shakeOn().pipe(first()).subscribe((resp)=>{
-      
-    });  
-    
-    this.router.navigate(['/bund18/display']);
-  }
-  
 }

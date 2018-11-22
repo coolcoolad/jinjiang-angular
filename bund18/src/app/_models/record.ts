@@ -1,5 +1,6 @@
 export class Record {
     id: number;
+    badgeID: number;
     device: string;
     operation: string;
     status: boolean;
@@ -7,6 +8,7 @@ export class Record {
 }
 
 export class RecordPost {
+    badgeID: number;
     device: string;
     operation: string;
     status: boolean;

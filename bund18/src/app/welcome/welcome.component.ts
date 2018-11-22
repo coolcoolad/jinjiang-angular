@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RemoteControlService } from '../_services/remote-control.service';
+import {  } from '../_services/record.service';
+// import { RemoteControlService } from '../_services/remote-control.service';
 
 @Component({
   selector: 'app-welcome',
@@ -13,7 +14,7 @@ export class WelcomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private rcService: RemoteControlService,
+    //private rcService: RemoteControlService,
   ) { }
 
   ngOnInit() {
@@ -27,14 +28,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   CheckDevice() {
-    this.rcService.checkDeviceOnline();
-    if((this.rcService.deviceNo==40045)||(this.rcService.deviceNo==40055)){
-      this.deviceStat = false;
-    }
-    else
-    {
-      this.deviceStat = true;
-      console.log("device is offline")
-    }
+    
   }
 }
