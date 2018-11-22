@@ -36,20 +36,36 @@ export class Bund18Component implements OnInit, OnDestroy {
   }
 
   OnShake() {
-    this.recordService.checkDevice().pipe(first()).subscribe();
-
-    var new_record: RecordPost = {
-      badgeID: parseInt(localStorage.getItem('badge')),
-      device: 'bund18',
-      operation: 'shake',
-      status: true
-    };
-
-    this.recordService.create(new_record).pipe(first()).subscribe(()=>{
-        console.log("add one record to server");        
-        this.router.navigate(['/bund18/display']);
+    this.recordService.turnOnDevice().pipe(first()).subscribe((resp)=>{
+      console.log(resp);
+      if(resp == 200){
+        var new_record: RecordPost = {
+          badgeID: parseInt(localStorage.getItem('badgeID')),
+          device: 'bund18',
+          operation: 'shake',
+          status: true
+        }
+        this.recordService.create(new_record).pipe(first()).subscribe(()=>{
+          console.log("add one record to server");        
+          this.router.navigate(['/bund18/display']);
+        }); 
       }
-    ); 
+      else{
+        //alert("device is offline");
+        setTimeout(() => {
+          var new_record: RecordPost = {
+            badgeID: parseInt(localStorage.getItem('badgeID')),
+            device: 'bund18',
+            operation: 'timeout',
+            status: true
+          }
+          this.recordService.create(new_record).pipe(first()).subscribe(()=>{
+            console.log("add one record to server");        
+            this.router.navigate(['/bund18/display']);
+          }); 
+        }, 5000);
+      }
+    }); 
   }
 
   onClickShake() {
