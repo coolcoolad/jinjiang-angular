@@ -11,6 +11,7 @@ export const environment = {
   deviceCheckUrl: 'http://localhost:8000/api/bund18/device/check/',
   deviceOnUrl: 'http://localhost:8000/api/bund18/device/on/',
   deviceOffUrl: 'http://localhost:8000/api/bund18/device/off/',
+  wxloginUrl: 'http://127.0.0.1:8000/api/bund18/wxlogin/',
 };
 
 /*

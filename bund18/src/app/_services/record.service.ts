@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Record, RecordPost, RecordStat } from '../_models';
+import { Record, RecordPost, RecordStat, WxPara } from '../_models';
 import { BadgeRequest, ShareLogPost, Badge, ShareLog } from '../_models';
 import { environment } from '../../environments/environment';
 import { stringLiteral } from 'babel-types';
@@ -54,5 +54,9 @@ export class RecordService {
 
   turnOffDevice(){
     return this.http.get(`${environment.deviceOffUrl}`, this.httpOptions);
+  }
+
+  getWxParameters() {
+    return this.http.get<WxPara>(`${environment.wxloginUrl}`, this.httpOptions);
   }
 }
