@@ -4,6 +4,8 @@ import { RecordService } from '../_services/record.service';
 import { ShareLog, ShareLogPost, WxPara } from '../_models';
 import { first } from 'rxjs/operators';
 import * as wx from 'weixin-js-sdk';
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-share',
@@ -14,6 +16,7 @@ export class ShareComponent implements OnInit {
 
   constructor(
     private recordService: RecordService,
+    private router: Router,
     @Inject(DOCUMENT) private document: any
   ) { }
 
@@ -49,7 +52,7 @@ export class ShareComponent implements OnInit {
         signature: this.wxPara.signature,
         jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
       });
-    });    
+    });  
 
     wx.ready(() => {
       wx.onMenuShareTimeline({
@@ -69,6 +72,11 @@ export class ShareComponent implements OnInit {
         cancel: ()=>{},
       })
     });
+
+    var imageNum:string = `${this.currentSelector}`;
+    var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
+    console.log(imageUrl);
+    window.location.replace(imageUrl);
   }
 
 }
