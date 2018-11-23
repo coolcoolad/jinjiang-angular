@@ -76,7 +76,7 @@ export class ShareComponent implements OnInit {
     var imageNum:string = `${this.currentSelector}`;
     var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
     console.log(imageUrl);
-    window.location.replace(imageUrl);
+    //window.location.replace(imageUrl);
   }
 
 }
