@@ -1,7 +1,3 @@
-jweixin@1.0.0
-MIT
-MIT
-
 zrender@4.0.5
 BSD
 BSD 3-Clause License

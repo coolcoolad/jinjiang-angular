@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { RecordService } from '../_services/record.service';
 import { ShareLog, ShareLogPost, WxPara } from '../_models';
 import { first } from 'rxjs/operators';
-import * as wx from 'jweixin';
+import * as wx from 'weixin-js-sdk';
 
 @Component({
   selector: 'app-share',
@@ -39,29 +39,29 @@ export class ShareComponent implements OnInit {
     });
 
     this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
-      this.wxPara = resp;      
-    });
-
-    wx.config({
-      debug: false,
-      appId: this.wxPara.appId,
-      timestamp: this.wxPara.timestamp,
-      nonceStr: this.wxPara.nonceStr,
-      signature: this.wxPara.signature,
-      jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-    });
+      this.wxPara = resp;  
+      
+      wx.config({
+        debug: false,
+        appId: this.wxPara.appId,
+        timestamp: this.wxPara.timestamp,
+        nonceStr: this.wxPara.nonceStr,
+        signature: this.wxPara.signature,
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+      });
+    });    
 
     wx.ready(() => {
       wx.onMenuShareTimeline({
-        title: '',
+        title: 'BUND18的二重奏',
         link: '',
         imgUrl: this.imageArray[this.currentSelector],
         success: () => {},
         cancel: () => {},
       }),
       wx.onMenuShareAppMessage({
-        title: '',
-        desc: '',
+        title: 'BUND18的二重奏',
+        desc: '外滩十八号圣诞新年艺术装置',
         link: '',
         imgUrl: this.imageArray[this.currentSelector],
         type: 'link',
