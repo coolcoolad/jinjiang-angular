@@ -43,6 +43,9 @@ export class ShareComponent implements OnInit {
       console.log("add one share info to database");
     });
 
+    var imageNum:string = `${this.currentSelector}`;
+    var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
+
     this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
       this.wxPara = resp;  
       console.log(this.wxPara);
@@ -59,25 +62,24 @@ export class ShareComponent implements OnInit {
 
     wx.ready(() => {
       wx.onMenuShareTimeline({
-        title: 'BUND18的二重奏',
+        title: '摇一摇，摇出你的2019新年运势',
         link: 'http://mm.wuzhanggui.shop/bund18/welcome',
-        imgUrl: this.imageArray[this.currentSelector],
+        imgUrl: imageUrl,
         success: () => {},
         cancel: () => {},
       }),
       wx.onMenuShareAppMessage({
-        title: 'BUND18的二重奏',
-        desc: '外滩十八号圣诞新年艺术装置',
+        title: '摇一摇，摇出你的2019新年运势',
+        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
         link: 'http://mm.wuzhanggui.shop/bund18/welcome',
-        imgUrl: this.imageArray[this.currentSelector],
+        imgUrl: imageUrl,
         type: 'link',
         success: ()=>{},
         cancel: ()=>{},
       })
     });
 
-    var imageNum:string = `${this.currentSelector}`;
-    var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
+    
   }
 
 }
