@@ -27,6 +27,8 @@ export class ShareComponent implements OnInit {
   private currentSelector:number;
 
   ngOnInit() {
+
+    console.log(location.href.split('#')[0]);
     
     this.currentSelector = Math.floor(Math.random() * 4);
     this.document.canvas.src = this.imageArray[this.currentSelector];
@@ -43,9 +45,10 @@ export class ShareComponent implements OnInit {
 
     this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
       this.wxPara = resp;  
+      console.log(this.wxPara);
       
       wx.config({
-        debug: false,
+        debug: true,
         appId: this.wxPara.appId,
         timestamp: this.wxPara.timestamp,
         nonceStr: this.wxPara.nonceStr,
@@ -75,8 +78,6 @@ export class ShareComponent implements OnInit {
 
     var imageNum:string = `${this.currentSelector}`;
     var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
-    console.log(imageUrl);
-    //window.location.replace(imageUrl);
   }
 
 }
