@@ -48,7 +48,7 @@ export class ShareComponent implements OnInit {
       console.log(this.wxPara);
       
       wx.config({
-        debug: true,
+        debug: false,
         appId: this.wxPara.appId,
         timestamp: this.wxPara.timestamp,
         nonceStr: this.wxPara.nonceStr,
@@ -60,7 +60,7 @@ export class ShareComponent implements OnInit {
     wx.ready(() => {
       wx.onMenuShareTimeline({
         title: 'BUND18的二重奏',
-        link: '',
+        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
         imgUrl: this.imageArray[this.currentSelector],
         success: () => {},
         cancel: () => {},
@@ -68,7 +68,7 @@ export class ShareComponent implements OnInit {
       wx.onMenuShareAppMessage({
         title: 'BUND18的二重奏',
         desc: '外滩十八号圣诞新年艺术装置',
-        link: '',
+        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
         imgUrl: this.imageArray[this.currentSelector],
         type: 'link',
         success: ()=>{},
