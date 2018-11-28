@@ -32,16 +32,7 @@ export class ShareComponent implements OnInit {
     
     this.currentSelector = Math.floor(Math.random() * 4);
     this.document.canvas.src = this.imageArray[this.currentSelector];
-    //console.log(imageArray[selector]);
-
-    var sharepost: ShareLogPost = {
-      badgeID: parseInt(localStorage.getItem('badgeID')),
-      randomID: this.currentSelector,
-    };
-
-    this.recordService.saveShareInfo(sharepost).pipe(first()).subscribe(()=>{
-      console.log("add one share info to database");
-    });
+    //console.log(imageArray[selector]);    
 
     //var imageNum:string = `${this.currentSelector}`;
     //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
@@ -66,7 +57,7 @@ export class ShareComponent implements OnInit {
         title: '摇一摇，摇出你的2019新年运势',
         link: 'http://mm.wuzhanggui.shop/bund18/welcome',
         imgUrl: imageUrl,
-        success: () => {},
+        success: () => {this.SendShareInfoToServer("moments");},
         cancel: () => {},
       }),
       wx.onMenuShareAppMessage({
@@ -75,12 +66,25 @@ export class ShareComponent implements OnInit {
         link: 'http://mm.wuzhanggui.shop/bund18/welcome',
         imgUrl: imageUrl,
         type: 'link',
-        success: ()=>{},
+        success: ()=>{this.SendShareInfoToServer("friends");},
         cancel: ()=>{},
       })
     });
 
     
+
+  }
+
+  SendShareInfoToServer(op:string) {
+    var sharepost: ShareLogPost = {
+      badgeID: parseInt(localStorage.getItem('badgeID')),
+      randomID: this.currentSelector,
+      operation: op,
+    };
+
+    this.recordService.saveShareInfo(sharepost).pipe(first()).subscribe(()=>{
+      console.log("add one share info to database");
+    });
   }
 
 }
