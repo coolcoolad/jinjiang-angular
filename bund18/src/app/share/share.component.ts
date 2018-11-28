@@ -43,8 +43,9 @@ export class ShareComponent implements OnInit {
       console.log("add one share info to database");
     });
 
-    var imageNum:string = `${this.currentSelector}`;
-    var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
+    //var imageNum:string = `${this.currentSelector}`;
+    //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
+    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
 
     this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
       this.wxPara = resp;  
