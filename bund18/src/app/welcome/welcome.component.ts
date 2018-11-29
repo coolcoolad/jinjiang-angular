@@ -5,6 +5,8 @@ import { BadgeRequest, Badge, WxPara } from '../_models';
 // import { RemoteControlService } from '../_services/remote-control.service';
 import { Ng2DeviceService } from 'ng2-device-detector';
 import { first } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+import * as wx from 'weixin-js-sdk';
 
 @Component({
   selector: 'app-welcome',
@@ -22,6 +24,9 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    var uri = (location.href.split('?')[0]);
+    console.log(uri);
+
     //clear badge when loading
     localStorage.clear();
     this.valid = false;
@@ -40,13 +45,16 @@ export class WelcomeComponent implements OnInit {
     });
 
     //pre load wechat auth
-    this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
+    this.recordService.getWxParameters("welcome").pipe(first()).subscribe((resp)=>{
       localStorage.setItem('appId', resp.appId.toString());
       localStorage.setItem('nonceStr', resp.nonceStr.toString());
       localStorage.setItem('timestamp', resp.timestamp.toString());
       localStorage.setItem('signature', resp.signature.toString());
       this.valid = true;
+
+      this.SetupWechatShare();
     });
+
   }
 
   onClickEntry() {
@@ -55,4 +63,37 @@ export class WelcomeComponent implements OnInit {
       this.router.navigate(['/bund18/shake']);
     }
   } 
+
+  SetupWechatShare() {
+    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
+
+    //load from pre-load parameters, also from 3th party service   
+    wx.config({
+      debug: false,
+      appId: localStorage.getItem('appId'),
+      timestamp: localStorage.getItem('timestamp'),
+      nonceStr: localStorage.getItem('nonceStr'),
+      signature: localStorage.getItem('signature'),
+      jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+    });    
+
+    wx.ready(() => {
+      wx.onMenuShareTimeline({
+        title: '摇一摇，摇出你的2019新年运势',
+        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+        imgUrl: imageUrl,
+        success: () => {},
+        cancel: () => {},
+      }),
+      wx.onMenuShareAppMessage({
+        title: '摇一摇，摇出你的2019新年运势',
+        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
+        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+        imgUrl: imageUrl,
+        type: 'link',
+        success: ()=>{},
+        cancel: ()=>{},
+      })
+    });
+  }
 }

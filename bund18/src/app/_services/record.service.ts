@@ -56,7 +56,7 @@ export class RecordService {
     return this.http.get(`${environment.deviceOffUrl}`, this.httpOptions);
   }
 
-  getWxParameters() {
-    return this.http.get<WxPara>(`${environment.wxloginUrl}`, this.httpOptions);
+  getWxParameters(page:string) {
+    return this.http.get<WxPara>(`${environment.wxloginUrl}${page}`, this.httpOptions);
   }
 }

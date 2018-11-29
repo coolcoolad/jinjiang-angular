@@ -26,9 +26,16 @@ export class ShareComponent implements OnInit {
 
   private currentSelector:number;
 
-  ngOnInit() {   
+  ngOnInit() { 
+    
+    this.recordService.getWxParameters("share").pipe(first()).subscribe((resp)=>{
+      localStorage.setItem('appId', resp.appId.toString());
+      localStorage.setItem('nonceStr', resp.nonceStr.toString());
+      localStorage.setItem('timestamp', resp.timestamp.toString());
+      localStorage.setItem('signature', resp.signature.toString());
 
-    this.SetupWechatShare();
+      this.SetupWechatShare();
+    });    
 
     console.log(location.href.split('#')[0]);
     
@@ -79,7 +86,7 @@ export class ShareComponent implements OnInit {
   }
 
   SetupWechatShare() {
-    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
+    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';    
 
     //load from pre-load parameters, also from 3th party service   
     wx.config({
