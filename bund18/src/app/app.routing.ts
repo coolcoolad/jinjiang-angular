@@ -7,7 +7,8 @@ import { DisplayComponent } from './display/display.component';
 import { ShareComponent } from './share/share.component';
 
 const appRoutes: Routes = [
-  { path: 'bund18/welcome', component:WelcomeComponent },
+  { path: '', component:WelcomeComponent },
+  { path: 'bund18/welcome', redirectTo: ''},
   { path: 'bund18/shake', component: Bund18Component },
   { path: 'bund18/display', component: DisplayComponent },
   { path: 'bund18/share' , component:ShareComponent},
