@@ -24,9 +24,6 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var uri = (location.href.split('?')[0]);
-    console.log(uri);
-
     //clear badge when loading
     localStorage.clear();
     this.valid = false;
@@ -44,17 +41,27 @@ export class WelcomeComponent implements OnInit {
       localStorage.setItem('badgeID', resp.id.toString());
     });
 
-    //pre load wechat auth
-    this.recordService.getWxParameters("welcome").pipe(first()).subscribe((resp)=>{
-      localStorage.setItem('appId', resp.appId.toString());
-      localStorage.setItem('nonceStr', resp.nonceStr.toString());
-      localStorage.setItem('timestamp', resp.timestamp.toString());
-      localStorage.setItem('signature', resp.signature.toString());
+    //pre load wechat auth if using ios
+    if(`${this.deviceInfo.device}` == "iphone")
+    {
+      localStorage.setItem('isIOS', 'true');
+
+      //ios need to register at root
+      this.recordService.getWxParameters("welcome").pipe(first()).subscribe((resp)=>{
+        localStorage.setItem('appId', resp.appId.toString());
+        localStorage.setItem('nonceStr', resp.nonceStr.toString());
+        localStorage.setItem('timestamp', resp.timestamp.toString());
+        localStorage.setItem('signature', resp.signature.toString());
+        this.valid = true;
+  
+        this.SetupWechatShare();
+      });
+    }
+    else
+    {
+      localStorage.setItem('isIOS', 'false');
       this.valid = true;
-
-      this.SetupWechatShare();
-    });
-
+    } 
   }
 
   onClickEntry() {

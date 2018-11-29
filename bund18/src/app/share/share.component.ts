@@ -28,51 +28,32 @@ export class ShareComponent implements OnInit {
 
   ngOnInit() { 
     
-    this.recordService.getWxParameters("share").pipe(first()).subscribe((resp)=>{
-      localStorage.setItem('appId', resp.appId.toString());
-      localStorage.setItem('nonceStr', resp.nonceStr.toString());
-      localStorage.setItem('timestamp', resp.timestamp.toString());
-      localStorage.setItem('signature', resp.signature.toString());
+    var isIOS = localStorage.getItem('isIOS');
 
-      this.SetupWechatShare();
-    });    
+    if(isIOS == "false") {
+      this.recordService.getWxParameters("share").pipe(first()).subscribe((resp)=>{
+        localStorage.setItem('appId', resp.appId.toString());
+        localStorage.setItem('nonceStr', resp.nonceStr.toString());
+        localStorage.setItem('timestamp', resp.timestamp.toString());
+        localStorage.setItem('signature', resp.signature.toString());
+
+        this.SetupWechatShare();
+      });    
+    }
 
     console.log(location.href.split('#')[0]);
     
     this.currentSelector = Math.floor(Math.random() * 4);
     this.document.canvas.src = this.imageArray[this.currentSelector];
-    //console.log(imageArray[selector]);    
 
     //var imageNum:string = `${this.currentSelector}`;
     //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
     var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
-
-    //get the wx auth from 3th party service
-    /* 
-    this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
-      this.wxPara = resp;
-      console.log(this.wxPara);
-      
-      wx.config({
-        debug: false,
-        appId: this.wxPara.appId,
-        timestamp: this.wxPara.timestamp,
-        nonceStr: this.wxPara.nonceStr,
-        signature: this.wxPara.signature,
-        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-      });
-    });
-    */    
-    window.location.reload();
   }
 
   ngOnChanges() {
     this.SetupWechatShare();
   }
-
-  // ngDoCheck() {
-  //   this.SetupWechatShare();
-  // }
 
   SendShareInfoToServer(op:string) {
     var sharepost: ShareLogPost = {

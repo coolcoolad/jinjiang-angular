@@ -14,4 +14,7 @@ const appRoutes: Routes = [
   { path: 'bund18/records', component: Bund18recordComponent },
 ];
 
-export const routing = RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules});
+export const routing = RouterModule.forRoot(
+  appRoutes, {
+    preloadingStrategy: PreloadAllModules
+  });
