@@ -57,6 +57,7 @@ export class RecordService {
   }
 
   getWxParameters(page:string) {
+    console.log(`${environment.wxloginUrl}${page}`);
     return this.http.get<WxPara>(`${environment.wxloginUrl}${page}`, this.httpOptions);
   }
 }
