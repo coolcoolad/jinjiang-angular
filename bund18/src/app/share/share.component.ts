@@ -22,7 +22,7 @@ export class ShareComponent implements OnInit {
 
   private wxPara: WxPara;
 
-  private imageArray = ["../../assets/1.png", "../../assets/2.png", "../../assets/3.png", "../../assets/4.png"];
+  private imageArray = ["../../assets/1.jpg", "../../assets/2.jpg", "../../assets/3.jpg", "../../assets/4.jpg"];
 
   private currentSelector:number;
 
@@ -38,8 +38,10 @@ export class ShareComponent implements OnInit {
     //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
     var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
 
+    //get the wx auth from 3th party service
+    /* 
     this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
-      this.wxPara = resp;  
+      this.wxPara = resp;
       console.log(this.wxPara);
       
       wx.config({
@@ -50,7 +52,18 @@ export class ShareComponent implements OnInit {
         signature: this.wxPara.signature,
         jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
       });
-    });  
+    });
+    */ 
+    
+    //load from pre-load parameters, also from 3th party service   
+    wx.config({
+      debug: false,
+      appId: localStorage.getItem('appId'),
+      timestamp: localStorage.getItem('timestamp'),
+      nonceStr: localStorage.getItem('nonceStr'),
+      signature: localStorage.getItem('signature'),
+      jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+    });    
 
     wx.ready(() => {
       wx.onMenuShareTimeline({
@@ -70,9 +83,6 @@ export class ShareComponent implements OnInit {
         cancel: ()=>{},
       })
     });
-
-    
-
   }
 
   SendShareInfoToServer(op:string) {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecordService } from '../_services/record.service';
-import { BadgeRequest, Badge } from '../_models';
+import { BadgeRequest, Badge, WxPara } from '../_models';
 // import { RemoteControlService } from '../_services/remote-control.service';
 import { Ng2DeviceService } from 'ng2-device-detector';
 import { first } from 'rxjs/operators';
@@ -20,7 +20,10 @@ export class WelcomeComponent implements OnInit {
     private deviceService: Ng2DeviceService,
   ) { }
 
-  ngOnInit() {   
+  ngOnInit() {
+    //clear badge when loading
+    localStorage.clear();
+
     this.deviceInfo = this.deviceService.getDeviceInfo();
     //console.log(this.deviceInfo);    
     var badge: BadgeRequest = {
@@ -32,6 +35,14 @@ export class WelcomeComponent implements OnInit {
     //console.log(badge);
     this.recordService.requestBadge(badge).pipe(first()).subscribe((resp)=>{
       localStorage.setItem('badgeID', resp.id.toString());
+    });
+
+    //pre load wechat auth
+    this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
+      localStorage.setItem('appId', resp.appId.toString());
+      localStorage.setItem('nonceStr', resp.nonceStr.toString());
+      localStorage.setItem('timestamp', resp.timestamp.toString());
+      localStorage.setItem('signature', resp.signature.toString());
     });
   }
 
