@@ -28,33 +28,6 @@ export class ShareComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(location.href.split('#')[0]);
-    
-    this.currentSelector = Math.floor(Math.random() * 4);
-    this.document.canvas.src = this.imageArray[this.currentSelector];
-    //console.log(imageArray[selector]);    
-
-    //var imageNum:string = `${this.currentSelector}`;
-    //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
-    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
-
-    //get the wx auth from 3th party service
-    /* 
-    this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
-      this.wxPara = resp;
-      console.log(this.wxPara);
-      
-      wx.config({
-        debug: false,
-        appId: this.wxPara.appId,
-        timestamp: this.wxPara.timestamp,
-        nonceStr: this.wxPara.nonceStr,
-        signature: this.wxPara.signature,
-        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-      });
-    });
-    */ 
-    
     //load from pre-load parameters, also from 3th party service   
     wx.config({
       debug: false,
@@ -83,6 +56,33 @@ export class ShareComponent implements OnInit {
         cancel: ()=>{},
       })
     });
+
+    console.log(location.href.split('#')[0]);
+    
+    this.currentSelector = Math.floor(Math.random() * 4);
+    this.document.canvas.src = this.imageArray[this.currentSelector];
+    //console.log(imageArray[selector]);    
+
+    //var imageNum:string = `${this.currentSelector}`;
+    //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
+    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
+
+    //get the wx auth from 3th party service
+    /* 
+    this.recordService.getWxParameters().pipe(first()).subscribe((resp)=>{
+      this.wxPara = resp;
+      console.log(this.wxPara);
+      
+      wx.config({
+        debug: false,
+        appId: this.wxPara.appId,
+        timestamp: this.wxPara.timestamp,
+        nonceStr: this.wxPara.nonceStr,
+        signature: this.wxPara.signature,
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+      });
+    });
+    */    
   }
 
   SendShareInfoToServer(op:string) {

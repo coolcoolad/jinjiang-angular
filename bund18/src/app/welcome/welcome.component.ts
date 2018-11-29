@@ -13,6 +13,7 @@ import { first } from 'rxjs/operators';
 })
 export class WelcomeComponent implements OnInit { 
   private deviceInfo;
+  private valid: boolean;
 
   constructor(
     private router: Router,
@@ -23,6 +24,7 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
     //clear badge when loading
     localStorage.clear();
+    this.valid = false;
 
     this.deviceInfo = this.deviceService.getDeviceInfo();
     //console.log(this.deviceInfo);    
@@ -43,11 +45,14 @@ export class WelcomeComponent implements OnInit {
       localStorage.setItem('nonceStr', resp.nonceStr.toString());
       localStorage.setItem('timestamp', resp.timestamp.toString());
       localStorage.setItem('signature', resp.signature.toString());
+      this.valid = true;
     });
   }
 
   onClickEntry() {
-    console.log("on click the entry button");
-    this.router.navigate(['/bund18/shake']);
+    if(this.valid) {
+      console.log("on click the entry button");
+      this.router.navigate(['/bund18/shake']);
+    }
   } 
 }
