@@ -63,6 +63,7 @@ export class ShareComponent implements OnInit {
       });
     });
     */    
+    window.location.reload();
   }
 
   ngOnChanges() {
