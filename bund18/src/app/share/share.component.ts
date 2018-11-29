@@ -58,13 +58,13 @@ export class ShareComponent implements OnInit {
     */    
   }
 
-  // ngOnChanges() {
-  //   this.SetupWechatShare();
-  // }
+  ngOnChanges() {
+    this.SetupWechatShare();
+  }
 
-  // ngDoCheck() {
-  //   this.SetupWechatShare();
-  // }
+  ngDoCheck() {
+    this.SetupWechatShare();
+  }
 
   SendShareInfoToServer(op:string) {
     var sharepost: ShareLogPost = {
