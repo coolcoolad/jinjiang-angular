@@ -102,5 +102,11 @@ export class WelcomeComponent implements OnInit {
         cancel: ()=>{},
       })
     });
+
+    wx.error(()=>{
+      //wx config fail, redirect to right page url
+      this.router.navigate(['']);
+    });
+    
   }
 }
