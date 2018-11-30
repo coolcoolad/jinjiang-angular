@@ -28,6 +28,11 @@ export class WelcomeComponent implements OnInit {
     localStorage.clear();
     this.valid = false;
 
+    if(location.href.split('?').length > 1)
+    {
+      this.router.navigate(['']);
+    }
+
     this.deviceInfo = this.deviceService.getDeviceInfo();
     //console.log(this.deviceInfo);    
     var badge: BadgeRequest = {
