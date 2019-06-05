@@ -13,6 +13,8 @@ import { RecordService } from './_services';
 import { Bund18Component } from './bund18/bund18.component';
 import { Bund18recordComponent } from './bund18record/bund18record.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { StartComponent } from './start/start.component';
+import { HintComponent } from './hint/hint.component';
 import { DisplayComponent } from './display/display.component';
 import { ShareComponent } from './share/share.component';
 
@@ -29,6 +31,8 @@ import { ShareComponent } from './share/share.component';
     Bund18Component,
     Bund18recordComponent,
     WelcomeComponent,
+    StartComponent,
+    HintComponent,
     DisplayComponent,
     ShareComponent,
   ],  

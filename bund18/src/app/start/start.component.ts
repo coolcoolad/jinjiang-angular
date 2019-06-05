@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  selector: 'app-start',
+  templateUrl: './start.component.html',
+  styleUrls: ['./start.component.css']
 })
-export class WelcomeComponent implements OnInit { 
+export class StartComponent implements OnInit { 
   private deviceInfo;
   private valid: boolean;
 
@@ -18,6 +18,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   onClickEntry() {
-    this.router.navigate(['bund18/start']);
-  }
+    this.router.navigate(['bund18/hint']);
+  } 
+
 }
