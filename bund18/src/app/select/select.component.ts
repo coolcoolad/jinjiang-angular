@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-hint',
-  templateUrl: './hint.component.html',
-  styleUrls: ['./hint.component.css']
+  selector: 'app-select',
+  templateUrl: './select.component.html',
+  styleUrls: ['./select.component.css']
 })
-export class HintComponent implements OnInit { 
+export class SelectComponent implements OnInit { 
   private deviceInfo;
   private valid: boolean;
 
@@ -15,8 +15,12 @@ export class HintComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    setTimeout(()=> {
-      this.router.navigate(['bund18/select']);
-    }, 2000);
   }
+
+  onClickEntry() {
+    setTimeout(()=> {
+      this.router.navigate(['']);
+    }, 2000);
+  } 
+
 }

@@ -15,6 +15,7 @@ import { Bund18recordComponent } from './bund18record/bund18record.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { StartComponent } from './start/start.component';
 import { HintComponent } from './hint/hint.component';
+import { SelectComponent } from './select/select.component';
 import { DisplayComponent } from './display/display.component';
 import { ShareComponent } from './share/share.component';
 
@@ -33,6 +34,7 @@ import { ShareComponent } from './share/share.component';
     WelcomeComponent,
     StartComponent,
     HintComponent,
+    SelectComponent,
     DisplayComponent,
     ShareComponent,
   ],  
