@@ -1,5 +1,22 @@
-.bg-img {
-  max-width: 100%;
-  height: auto;
-  background-size: cover;
+.parent{
+  position: relative;
+  text-align: center;
+}
+
+.big-img {
+  width: 80%;
+  margin-top: 8%;
+}
+
+.footer {
+  width: 100%;
+  height: 7%;
+  position: fixed;
+  bottom: 3%;
+  text-align: center;
+}
+
+.footer img {
+  height: 100%;
+  width: auto;
 }

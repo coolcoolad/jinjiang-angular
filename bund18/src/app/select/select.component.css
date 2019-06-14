@@ -3,11 +3,26 @@
 }
 
 table {
-    width: 100%
+    width: 100%;
+    margin-top: 10%;
 }
 
 table td {
-    width: 50%
+    width: 50%;
+}
+
+table td img {
+    width: 60%;
+    margin-top: 50%;
+}
+
+.left-col {
+    padding-left: 13%;
+}
+
+.right-col {
+    padding-right: 13%;
+    text-align: right;
 }
 
 .footer {

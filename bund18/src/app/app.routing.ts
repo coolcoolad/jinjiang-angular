@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'bund18/hint', pathMatch:'full', component:HintComponent},
   { path: 'bund18/select', pathMatch:'full', component:SelectComponent},
   { path: 'bund18/shake', pathMatch:'full', component: Bund18Component },
-  { path: 'bund18/display', pathMatch:'full', component: DisplayComponent },
+  { path: 'bund18/display/:imgSrc', pathMatch:'full', component: DisplayComponent },
   { path: 'bund18/share' , pathMatch:'full', component:ShareComponent},
   { path: 'bund18/records', pathMatch:'full', component: Bund18recordComponent },
 

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { RecordService } from '../_services/record.service';
-import { first } from 'rxjs/operators';
-import { RecordPost } from '../_models';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-display',
@@ -11,30 +8,19 @@ import { RecordPost } from '../_models';
 })
 
 export class DisplayComponent implements OnInit {
+  private imgSrc = '';
+  private pathPrefix = '../../assets/PNG Assets H5/Category Screens/';
 
   constructor(
     private router: Router,
-    private recordService: RecordService,
+    private activatedRoute: ActivatedRoute
   ) {
-    setTimeout(() => {
-      this.router.navigate(['/bund18/share']);
-      this.recordService.turnOffDevice().pipe(first()).subscribe((resp)=>{
-        if(resp == 200) {
-          var new_record: RecordPost = {
-            badgeID: parseInt(localStorage.getItem('badgeID')),
-            device: 'bund18',
-            operation: 'shake',
-            status: false
-          }
-          this.recordService.create(new_record).pipe(first()).subscribe(()=>{
-            console.log("add one record to server showing off");
-          }); 
-        }
-      });
-    }, 8000);
+    this.imgSrc = this.pathPrefix + this.activatedRoute.snapshot.params['imgSrc'];
   }
 
   ngOnInit() {
-    
+    setTimeout(() => {
+      this.router.navigate(['bund18/share']);
+    }, 10000);
   }
 }
