@@ -1,1 +1,0 @@
-export * from './bund18.component';

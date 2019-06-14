@@ -1,8 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
 import { RecordService } from '../_services/record.service';
-import { ShareLog, ShareLogPost, WxPara } from '../_models';
-import { first } from 'rxjs/operators';
 import * as wx from 'weixin-js-sdk';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
@@ -16,87 +13,54 @@ export class ShareComponent implements OnInit {
 
   constructor(
     private recordService: RecordService,
-    private router: Router,
-    @Inject(DOCUMENT) private document: any
+    private router: Router
   ) { }
 
-  private wxPara: WxPara;
-
-  private imageArray = ["../../assets/1.jpg", "../../assets/2.jpg", "../../assets/3.jpg", "../../assets/4.jpg"];
-
-  private currentSelector:number;
-
-  ngOnInit() { 
-    
-    var isIOS = localStorage.getItem('isIOS');
-
-    if(isIOS == "false") {
-      this.recordService.getWxParameters("share").pipe(first()).subscribe((resp)=>{
-        localStorage.setItem('appId', resp.appId.toString());
-        localStorage.setItem('nonceStr', resp.nonceStr.toString());
-        localStorage.setItem('timestamp', resp.timestamp.toString());
-        localStorage.setItem('signature', resp.signature.toString());
-
-        this.SetupWechatShare();
-      });    
-    }
-
-    console.log(location.href.split('#')[0]);
-    
-    this.currentSelector = Math.floor(Math.random() * 4);
-    this.document.canvas.src = this.imageArray[this.currentSelector];
-
-    //var imageNum:string = `${this.currentSelector}`;
-    //var imageUrl = environment.domainUrl + '/assets/' + imageNum + '.jpg';
-    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';
-  }
-
-  ngOnChanges() {
+  ngOnInit() {
     this.SetupWechatShare();
   }
 
   SendShareInfoToServer(op:string) {
-    var sharepost: ShareLogPost = {
-      badgeID: parseInt(localStorage.getItem('badgeID')),
-      randomID: this.currentSelector,
-      operation: op,
-    };
-
-    this.recordService.saveShareInfo(sharepost).pipe(first()).subscribe(()=>{
-      console.log("add one share info to database");
-    });
+    this.router.navigate(['bund18/end']);
   }
 
   SetupWechatShare() {
-    var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';    
+    this.recordService.getWxParameters("welcome").subscribe((resp)=>{
+      localStorage.setItem('appId', resp.appId.toString());
+      localStorage.setItem('nonceStr', resp.nonceStr.toString());
+      localStorage.setItem('timestamp', resp.timestamp.toString());
+      localStorage.setItem('signature', resp.signature.toString());
+      
+      var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';    
 
-    //load from pre-load parameters, also from 3th party service   
-    wx.config({
-      debug: false,
-      appId: localStorage.getItem('appId'),
-      timestamp: localStorage.getItem('timestamp'),
-      nonceStr: localStorage.getItem('nonceStr'),
-      signature: localStorage.getItem('signature'),
-      jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-    });    
+      //load from pre-load parameters, also from 3th party service   
+      wx.config({
+        debug: false,
+        appId: localStorage.getItem('appId'),
+        timestamp: localStorage.getItem('timestamp'),
+        nonceStr: localStorage.getItem('nonceStr'),
+        signature: localStorage.getItem('signature'),
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+      });    
 
-    wx.ready(() => {
-      wx.onMenuShareTimeline({
-        title: '摇一摇，摇出你的2019新年运势',
-        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
-        imgUrl: imageUrl,
-        success: () => {this.SendShareInfoToServer("moments");},
-        cancel: () => {},
-      }),
-      wx.onMenuShareAppMessage({
-        title: '摇一摇，摇出你的2019新年运势',
-        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
-        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
-        imgUrl: imageUrl,
-        type: 'link',
-        success: ()=>{this.SendShareInfoToServer("friends");},
-        cancel: ()=>{},
-      })
+      wx.ready(() => {
+        wx.onMenuShareTimeline({
+          title: '摇一摇，摇出你的2019新年运势',
+          link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+          imgUrl: imageUrl,
+          success: () => {this.SendShareInfoToServer("moments");},
+          cancel: () => {},
+        }),
+        wx.onMenuShareAppMessage({
+          title: '摇一摇，摇出你的2019新年运势',
+          desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
+          link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+          imgUrl: imageUrl,
+          type: 'link',
+          success: ()=>{this.SendShareInfoToServer("friends");},
+          cancel: ()=>{},
+        })
+      });
     });
   }
 

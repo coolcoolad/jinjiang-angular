@@ -7,9 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent implements OnInit { 
-  private diamondFlag = true;
-  private gameBoyFlag = true;
-  private airPlaneFlag = true;
   private highlightIcon = -1;
   
   constructor(
@@ -28,33 +25,39 @@ export class SelectComponent implements OnInit {
   onClickDiamond() {
     //this.diamondFlag = !this.diamondFlag;
     this.highlightIcon = 0;
-    this.goToDisplayPage('Money_Screen.png');
+    //this.goToDisplayPage('Money_Screen.png');
+    this.goToDisplayPage('1.gif');
   }
 
   onClickGameBoy() {
     //this.gameBoyFlag = !this.gameBoyFlag;
     this.highlightIcon = 1;
-    this.goToDisplayPage('Gamer_Screen.png');
+    //this.goToDisplayPage('Gamer_Screen.png');
+    this.goToDisplayPage('2.gif');
   }
   
   onClickAirPlane() {
     //this.airPlaneFlag = !this.airPlaneFlag;
     this.highlightIcon = 2;
-    this.goToDisplayPage('Travel_Screen.png');
+    //this.goToDisplayPage('Travel_Screen.png');
+    this.goToDisplayPage('3.gif');
   }
   
   onClickHeart() {
     this.highlightIcon = 3;
-    this.goToDisplayPage('Love_Screen.png');
+    //this.goToDisplayPage('Love_Screen.png');
+    this.goToDisplayPage('4.gif');
   }
   
   onClickSaturn() {
     this.highlightIcon = 4;
-    this.goToDisplayPage('Space_Screen.png');
+    //this.goToDisplayPage('Space_Screen.png');
+    this.goToDisplayPage('5.gif');
   }
   
   onClickCat() {
     this.highlightIcon = 5;
-    this.goToDisplayPage('CatLover_Screen.png');
+    //this.goToDisplayPage('CatLover_Screen.png');
+    this.goToDisplayPage('6.gif');
   }
 }

@@ -10,14 +10,13 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 
 import { RecordService } from './_services';
-import { Bund18Component } from './bund18/bund18.component';
-import { Bund18recordComponent } from './bund18record/bund18record.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { StartComponent } from './start/start.component';
 import { HintComponent } from './hint/hint.component';
 import { SelectComponent } from './select/select.component';
 import { DisplayComponent } from './display/display.component';
 import { ShareComponent } from './share/share.component';
+import { EndComponent } from './end/end.component';
 
 @NgModule({
   imports: [
@@ -29,14 +28,13 @@ import { ShareComponent } from './share/share.component';
   ],
   declarations: [
     AppComponent,
-    Bund18Component,
-    Bund18recordComponent,
     WelcomeComponent,
     StartComponent,
     HintComponent,
     SelectComponent,
     DisplayComponent,
     ShareComponent,
+    EndComponent
   ],  
   providers: [
     RecordService,
