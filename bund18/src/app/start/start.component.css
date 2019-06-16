@@ -7,11 +7,23 @@
 .logo {
     max-width: 100%;
     height: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
+}
+
+.buttons {
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    top: 80%;
 }
 
 .button {
+    margin-bottom: 20px;
     width: 30%;
-    height: auto;
+    height: 40px;
+    background-image: url('../../assets/H5/Button_Eng_Cn.png');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    border-style: none;
+    background-color: transparent;
+    color: Black;
 }

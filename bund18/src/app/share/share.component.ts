@@ -18,6 +18,9 @@ export class ShareComponent implements OnInit {
 
   ngOnInit() {
     this.SetupWechatShare();
+    setTimeout(() => {
+      this.router.navigate(['bund18/end']);//for test
+    }, 2000);
   }
 
   SendShareInfoToServer(op:string) {
