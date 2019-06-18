@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Record, RecordPost, RecordStat, WxPara } from '../_models';
 import { BadgeRequest, ShareLogPost, Badge, ShareLog } from '../_models';
 import { environment } from '../../environments/environment';
-import { stringLiteral } from 'babel-types';
 
 @Injectable()
 export class RecordService {
@@ -57,7 +56,10 @@ export class RecordService {
   }
 
   getWxParameters(page:string) {
-    console.log(`${environment.wxloginUrl}${page}`);
     return this.http.get<WxPara>(`${environment.wxloginUrl}${page}`, this.httpOptions);
+  }
+
+  getLicense() {
+    return this.http.get(`${environment.licenseUrl}`, this.httpOptions);
   }
 }

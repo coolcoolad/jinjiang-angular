@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-  recordUrl: 'http://localhost:8000/api/bund18/record/',
-  badgeUrl: 'http://localhost:8000/api/bund18/badge/',
-  shareUrl: 'http://localhost:8000/api/bund18/share/',
-  statUrl: 'http://localhost:8000/api/bund18/stat/',  
-  deviceCheckUrl: 'http://localhost:8000/api/bund18/device/check/',
-  deviceOnUrl: 'http://localhost:8000/api/bund18/device/on/',
-  deviceOffUrl: 'http://localhost:8000/api/bund18/device/off/',
-  wxloginUrl: 'http://127.0.0.1:8000/api/bund18/wxlogin/',
+  recordUrl: 'http://40.74.242.24:8000/api/bund18/record/',
+  badgeUrl: 'http://40.74.242.24:8000/api/bund18/badge/',
+  shareUrl: 'http://40.74.242.24:8000/api/bund18/share/',
+  statUrl: 'http://40.74.242.24:8000/api/bund18/stat/',  
+  deviceCheckUrl: 'http://40.74.242.24:8000/api/bund18/device/check/',
+  deviceOnUrl: 'http://40.74.242.24:8000/api/bund18/device/on/',
+  deviceOffUrl: 'http://40.74.242.24:8000/api/bund18/device/off/',
+  wxloginUrl: 'http://40.74.242.24:8000/api/bund18/wxlogin/',
+  licenseUrl: 'http://40.74.242.24:8000/api/jjpark/device/control/request',
   domainUrl: 'http://127.0.0.1:4200',
 };
 
