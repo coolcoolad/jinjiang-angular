@@ -17,9 +17,12 @@
     }
   </style>
 
-  <!-- <script src="./imgList.ts"></script> -->
+  <script src="./assets/imgList.js"></script>
   <script>
-    console.log("sadasdasds");
+      for(var i=0 ; i < imgList.length; i++) {
+        var img = document.createElement('img');
+        img.src = imgList[i];
+      }
   </script>
 </head>
 <body>

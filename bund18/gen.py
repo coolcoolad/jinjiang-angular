@@ -8,11 +8,11 @@ def gci(filepath, ff):
       gci(fi_d, ff)                  
     elif fi.endswith('.png') or fi.endswith('.jpg') or fi.endswith('.gif'):
       line = filepath+'/'+fi
-      line = '\t<img src="'+line[line.find('/assets/'):]+'" />\n'
+      line = '\t".'+line[line.find('/assets/'):]+'",\n'
       ff.write(line)
 
-ff = open('./src/app/allImage/allImage.component.html', 'w')
-ff.write('<div>\n')
+ff = open('./src/assets/imgList.js', 'w')
+ff.write('var imgList = [\n')
 gci('./src/assets', ff)
-ff.write('</div>\n')
+ff.write('];\n')
 ff.close()
