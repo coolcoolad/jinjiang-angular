@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RecordService } from '../_services/record.service';
 
 @Component({
   selector: 'app-select',
@@ -8,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class SelectComponent implements OnInit { 
   private highlightIcon = -1;
+  private showError = false;
   
   constructor(
     private router: Router,
+    private recordService: RecordService,
   ) { }
 
   ngOnInit() {
@@ -22,42 +25,43 @@ export class SelectComponent implements OnInit {
     }, 1000);
   }
 
+  private controlDevice(deviceId: Number) {
+    this.recordService.controlDevice(deviceId).subscribe(resp => {
+      this.showError = false;
+      this.goToDisplayPage(`${deviceId}.gif`);
+    }, error => {
+      console.log(error);
+      this.showError = true;
+    });
+  }
+
   onClickDiamond() {
-    //this.diamondFlag = !this.diamondFlag;
     this.highlightIcon = 0;
-    //this.goToDisplayPage('Money_Screen.png');
-    this.goToDisplayPage('1.gif');
+    this.controlDevice(1);
   }
 
   onClickGameBoy() {
-    //this.gameBoyFlag = !this.gameBoyFlag;
     this.highlightIcon = 1;
-    //this.goToDisplayPage('Gamer_Screen.png');
-    this.goToDisplayPage('2.gif');
+    this.controlDevice(2);
   }
   
   onClickAirPlane() {
-    //this.airPlaneFlag = !this.airPlaneFlag;
     this.highlightIcon = 2;
-    //this.goToDisplayPage('Travel_Screen.png');
-    this.goToDisplayPage('3.gif');
+    this.controlDevice(3);
   }
   
   onClickHeart() {
     this.highlightIcon = 3;
-    //this.goToDisplayPage('Love_Screen.png');
-    this.goToDisplayPage('4.gif');
+    this.controlDevice(4);
   }
   
   onClickSaturn() {
     this.highlightIcon = 4;
-    //this.goToDisplayPage('Space_Screen.png');
-    this.goToDisplayPage('5.gif');
+    this.controlDevice(5);
   }
   
   onClickCat() {
     this.highlightIcon = 5;
-    //this.goToDisplayPage('CatLover_Screen.png');
-    this.goToDisplayPage('6.gif');
+    this.controlDevice(6);
   }
 }

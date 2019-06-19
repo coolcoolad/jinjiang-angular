@@ -16,15 +16,11 @@ export class StartComponent implements OnInit {
     private router: Router,
   ) { }
 
-  private getLicense() {
-    return false;
-  }
-
   ngOnInit() {
-    for(let i=0 ; i < imgList.length; i++) {
-      let img = new Image();
-      img.src = imgList[i];
-    }
+    // for(let i=0 ; i < imgList.length; i++) {
+    //   let img = new Image();
+    //   img.src = imgList[i];
+    // }
   }
 
   onClickEntry() {

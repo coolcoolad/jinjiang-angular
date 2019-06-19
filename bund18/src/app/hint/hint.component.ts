@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Ng2DeviceService } from 'ng2-device-detector';
 import { RecordService } from '../_services/record.service';
 import { BadgeRequest } from '../_models';
 
@@ -15,13 +16,27 @@ export class HintComponent implements OnInit {
   constructor(
     private recordService: RecordService,
     private router: Router,
+    private deviceService: Ng2DeviceService,
   ) { }
 
   ngOnInit() {
+    localStorage.clear();
     setTimeout(()=> {
-      let badge = new BadgeRequest();
-      this.recordService.requestBadge(badge);
-      this.router.navigate(['bund18/select']);
+      this.deviceInfo = this.deviceService.getDeviceInfo();
+      //console.log(this.deviceInfo);    
+      let badge: BadgeRequest = {
+        browser: `${this.deviceInfo.browser}`,
+        version: `${this.deviceInfo.browser_version}`,
+        device: `${this.deviceInfo.device}`,
+        os: `${this.deviceInfo.os}`,
+      }
+      this.recordService.requestBadge(badge).subscribe(resp=>{
+        localStorage.setItem('badgeID', resp.id.toString());
+        this.router.navigate(['bund18/select']);
+      }, error => {
+        console.log(error);
+        this.router.navigate(['bund18/select']);
+      });
     }, 2000);
   }
 }

@@ -62,4 +62,8 @@ export class RecordService {
   getLicense() {
     return this.http.get(`${environment.licenseUrl}`, this.httpOptions);
   }
+
+  controlDevice(deviceId: Number) {
+    return this.http.get(`${environment.deviceControlUrl}/${deviceId}`);
+  }
 }

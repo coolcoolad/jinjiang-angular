@@ -8,12 +8,11 @@ def gci(filepath, ff):
       gci(fi_d, ff)                  
     elif fi.endswith('.png') or fi.endswith('.jpg') or fi.endswith('.gif'):
       line = filepath+'/'+fi
-      line = '\t".'+line[line.find('/assets/'):]+'",\n'
+      line = '\t<img src="'+line[line.find('/assets/'):]+'" />\n'
       ff.write(line)
 
-ff = open('./src/imgList.ts', 'w')
-ff.write('let imgList = [\n')
+ff = open('./src/app/allImage/allImage.component.html', 'w')
+ff.write('<div>\n')
 gci('./src/assets', ff)
-ff.write('];\n')
-ff.write('export default imgList;')
+ff.write('</div>\n')
 ff.close()
