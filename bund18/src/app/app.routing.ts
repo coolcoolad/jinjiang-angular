@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'bund18/share' , pathMatch:'full', component:ShareComponent},
   { path: 'bund18/end' , pathMatch:'full', component:EndComponent},
   { path: 'bund18/shareCard/:id', pathMatch:'full', component: ShareCardComponent },
-  { path: 'bund18/luisdfj', loadChildren: './app/app.module#', data: {preload: true} },
+  { path: 'bund18/luisdfj', pathMatch:'full', component: AllImageComponent },
 
   { path: '**', redirectTo: '' },
 ];

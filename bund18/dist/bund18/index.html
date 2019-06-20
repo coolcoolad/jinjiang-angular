@@ -2,17 +2,55 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Cache-control" content="No-Cache">
-  <title>Bund18</title>
+  <meta http-equiv="Cache-control" content="max-age=315360000">
+  <meta name="referrer" content="no-referrer" />
+  <title>DREAM ON</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
     a { cursor: pointer }
+    body {
+      color: white;
+      background-color: black;
+      height: 100%;
+    }
   </style>
-<link rel="stylesheet" href="styles.52d95800b9c6ec5efa61.css"></head>
+
+  <script src="./assets/imgList.js"></script>
+  <script src="assets/resLoader.js"></script>
+  <script>
+      // for(var i=0 ; i < imgList.length; i++) {
+      //   var img = document.createElement('img');
+      //   img.src = imgList[i];
+      // }
+      var loader = new resLoader({
+        resources : imgList,
+        onStart : function(total){
+          console.log('start:'+total);
+        },
+        onProgress : function(current, total){
+          console.log(current+'/'+total);
+          var percent = current/total*100;
+          $('.progressbar').css('width', percent+'%');
+          $('.progresstext .current').text(current);
+          $('.progresstext .total').text(total);
+        },
+        onComplete : function(total){
+          alert('加载完毕:'+total+'个资源');
+        }
+      });
+
+    loader.start();
+  </script>
+</head>
 <body>
-  <app>Loading</app>
-<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.9661dc3c378f29ccace9.js"></script><script type="text/javascript" src="scripts.2944f5cf2f510d9d8bb5.js"></script><script type="text/javascript" src="main.414d8683b524fc65f8a2.js"></script></body>
+  <app style="text-align: center">
+    <h2>Loading</h2>
+    <div>
+        <img src="assets/gif/loading-page.gif" style="width: 50%"/>
+    </div>
+  </app>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="scripts.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
 </html>
