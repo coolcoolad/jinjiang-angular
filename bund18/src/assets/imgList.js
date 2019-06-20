@@ -10,6 +10,7 @@ var imgList = [
 	"./assets/H5/3-05.png",
 	"./assets/H5/BG-05.png",
 	"./assets/H5/Button_Eng_Cn.png",
+	"./assets/H5/end-15.png",
 	"./assets/H5/wheel-14.png",
 	"./assets/H5en/1-03.png",
 	"./assets/H5en/2-04.png",

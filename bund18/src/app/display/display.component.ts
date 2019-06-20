@@ -19,5 +19,8 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['bund18/share']);
+    }, 3000);
   }
 }

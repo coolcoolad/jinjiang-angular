@@ -602,6 +602,10 @@ var DisplayComponent = /** @class */ (function () {
         this.imgSrc = this.pathPrefix + this.activatedRoute.snapshot.params['imgSrc'];
     }
     DisplayComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.router.navigate(['bund18/share']);
+        }, 3000);
     };
     DisplayComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
