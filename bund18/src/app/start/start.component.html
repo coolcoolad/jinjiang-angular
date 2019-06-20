@@ -3,10 +3,10 @@
   <div class="buttons">
     <div *ngIf="waiting">排队中...Please wait...</div>
     <div>
-        <input class="button" type="button" value="开始吧" (click)="onClickEntry()" />
+      <input class="button" type="button" value="开始吧" (click)="onClickEntry('')" />
     </div>
     <div>
-        <input class="button" type="button" value="Start" (click)="onClickEntry()" />
+      <input class="button" type="button" value="Start" (click)="onClickEntry('En')" />
     </div>
   </div>
 </div>

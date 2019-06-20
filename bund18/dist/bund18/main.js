@@ -302,69 +302,6 @@ var ShakeService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/allImage/allImage.component.css":
-/*!*************************************************!*\
-  !*** ./src/app/allImage/allImage.component.css ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".parent{\r\n  position: relative;\r\n  text-align: center;\r\n}\r\n\r\n.big-img {\r\n  width: 80%;\r\n  margin-top: 8%;\r\n}\r\n\r\n.footer {\r\n  width: 100%;\r\n  height: 7%;\r\n  position: fixed;\r\n  bottom: 3%;\r\n  text-align: center;\r\n}\r\n\r\n.footer img {\r\n  height: 100%;\r\n  width: auto;\r\n}"
-
-/***/ }),
-
-/***/ "./src/app/allImage/allImage.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/allImage/allImage.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n\t<img src=\"/assets/gif/1.gif\" />\r\n\t<img src=\"/assets/gif/2.gif\" />\r\n\t<img src=\"/assets/gif/3.gif\" />\r\n\t<img src=\"/assets/gif/4.gif\" />\r\n\t<img src=\"/assets/gif/5.gif\" />\r\n\t<img src=\"/assets/gif/6.gif\" />\r\n\t<img src=\"/assets/gif/loading-page.gif\" />\r\n\t<img src=\"/assets/H5/1-03.png\" />\r\n\t<img src=\"/assets/H5/2-04.png\" />\r\n\t<img src=\"/assets/H5/3-05.png\" />\r\n\t<img src=\"/assets/H5/arrow-19.png\" />\r\n\t<img src=\"/assets/H5/BG-05.png\" />\r\n\t<img src=\"/assets/H5/button-19.png\" />\r\n\t<img src=\"/assets/H5/Button_Eng_Cn.png\" />\r\n\t<img src=\"/assets/H5/card bling-19.png\" />\r\n\t<img src=\"/assets/H5/card cat-19.png\" />\r\n\t<img src=\"/assets/H5/card firstclass-19.png\" />\r\n\t<img src=\"/assets/H5/card game-19.png\" />\r\n\t<img src=\"/assets/H5/card moon-19.png\" />\r\n\t<img src=\"/assets/H5/card peace lover-19.png\" />\r\n\t<img src=\"/assets/H5/cat-19.png\" />\r\n\t<img src=\"/assets/H5/cat2-19.png\" />\r\n\t<img src=\"/assets/H5/contents1-08.png\" />\r\n\t<img src=\"/assets/H5/contents2-09.png\" />\r\n\t<img src=\"/assets/H5/contents3-10.png\" />\r\n\t<img src=\"/assets/H5/contents4-11.png\" />\r\n\t<img src=\"/assets/H5/contents5-12.png\" />\r\n\t<img src=\"/assets/H5/contents6-13.png\" />\r\n\t<img src=\"/assets/H5/diamond-19.png\" />\r\n\t<img src=\"/assets/H5/diamond2-19.png\" />\r\n\t<img src=\"/assets/H5/dream on-19.png\" />\r\n\t<img src=\"/assets/H5/end-15.png\" />\r\n\t<img src=\"/assets/H5/game-19.png\" />\r\n\t<img src=\"/assets/H5/game2-19.png\" />\r\n\t<img src=\"/assets/H5/love-19.png\" />\r\n\t<img src=\"/assets/H5/love2-19.png\" />\r\n\t<img src=\"/assets/H5/space-19.png\" />\r\n\t<img src=\"/assets/H5/space2-19.png\" />\r\n\t<img src=\"/assets/H5/travel-19.png\" />\r\n\t<img src=\"/assets/H5/travel2-19.png\" />\r\n\t<img src=\"/assets/H5/wheel-14.png\" />\r\n\t<img src=\"/assets/H5en/1-03.png\" />\r\n\t<img src=\"/assets/H5en/2-04.png\" />\r\n\t<img src=\"/assets/H5en/3-05.png\" />\r\n\t<img src=\"/assets/H5en/4-06.png\" />\r\n\t<img src=\"/assets/H5en/5-14.png\" />\r\n\t<img src=\"/assets/H5en/6-15.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Additonal Icons_Buttons_Images/butterfly1.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Additonal Icons_Buttons_Images/Button_Eng_Cn.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Additonal Icons_Buttons_Images/FerrisWheel.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Additonal Icons_Buttons_Images/Post_Icon.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Additonal Icons_Buttons_Images/Share_Icon_Wht.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Additonal Icons_Buttons_Images/TapScreen_Icon.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/AirPlane_Icon_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/AirPlane_Icon_Wht.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Cat_Icon_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Cat_Icon_Wht.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Diamond_Icon_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Diamond_Icon_Wht.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/GameBoy_Icon_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/GameBoy_Icon_Wht.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Heart_Icon_Blk.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Heart_Icon_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Saturn_Icon_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Icons/Saturn_Icon_Wht.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Screens/CatLover_Screen.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Screens/Gamer_Screen.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Screens/Love_Screen.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Screens/Money_Screen.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Screens/Space_Screen.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Category Screens/Travel_Screen.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/DreamOn_Footer_Logo_JJ_Col_Butterfly_Hor.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/DreamOn_MainPage_Logo_JJ_Col_Butterfly_Stack.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/JJActionPark_ENG_CN_Blk.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/JJActionPark_ENG_CN_Col.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/Official_DreamOn_Logo_JJ_Blk_Butterfly_Hor.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/Official_DreamOn_Logo_JJ_Blk_Butterfly_Stack.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/Official_DreamOn_Logo_JJ_Col_Butterfly_Hor.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Logos/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Card_Corners-01.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Cat_Postcard.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Game_Postcard.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Love_Postcard-01.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Money_Postcard.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Space_Postcard.png\" />\r\n\t<img src=\"/assets/PNG Assets H5/Postcards/Travel_Postcard.png\" />\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/allImage/allImage.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/allImage/allImage.component.ts ***!
-  \************************************************/
-/*! exports provided: AllImageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllImageComponent", function() { return AllImageComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AllImageComponent = /** @class */ (function () {
-    function AllImageComponent() {
-    }
-    AllImageComponent.prototype.ngOnInit = function () {
-    };
-    AllImageComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-all-image',
-            template: __webpack_require__(/*! ./allImage.component.html */ "./src/app/allImage/allImage.component.html"),
-            styles: [__webpack_require__(/*! ./allImage.component.css */ "./src/app/allImage/allImage.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], AllImageComponent);
-    return AllImageComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/app.component.html":
 /*!************************************!*\
   !*** ./src/app/app.component.html ***!
@@ -432,18 +369,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./welcome/welcome.component */ "./src/app/welcome/welcome.component.ts");
 /* harmony import */ var _start_start_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./start/start.component */ "./src/app/start/start.component.ts");
 /* harmony import */ var _hint_hint_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./hint/hint.component */ "./src/app/hint/hint.component.ts");
-/* harmony import */ var _select_select_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./select/select.component */ "./src/app/select/select.component.ts");
-/* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
-/* harmony import */ var _share_share_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./share/share.component */ "./src/app/share/share.component.ts");
-/* harmony import */ var _end_end_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./end/end.component */ "./src/app/end/end.component.ts");
-/* harmony import */ var _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./shareCard/shareCard.component */ "./src/app/shareCard/shareCard.component.ts");
-/* harmony import */ var _allImage_allImage_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./allImage/allImage.component */ "./src/app/allImage/allImage.component.ts");
+/* harmony import */ var _hintEn_hint_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hintEn/hint.component */ "./src/app/hintEn/hint.component.ts");
+/* harmony import */ var _select_select_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./select/select.component */ "./src/app/select/select.component.ts");
+/* harmony import */ var _selectEn_select_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./selectEn/select.component */ "./src/app/selectEn/select.component.ts");
+/* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
+/* harmony import */ var _displayEn_display_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./displayEn/display.component */ "./src/app/displayEn/display.component.ts");
+/* harmony import */ var _share_share_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./share/share.component */ "./src/app/share/share.component.ts");
+/* harmony import */ var _shareEn_share_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./shareEn/share.component */ "./src/app/shareEn/share.component.ts");
+/* harmony import */ var _end_end_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./end/end.component */ "./src/app/end/end.component.ts");
+/* harmony import */ var _endEn_end_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./endEn/end.component */ "./src/app/endEn/end.component.ts");
+/* harmony import */ var _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./shareCard/shareCard.component */ "./src/app/shareCard/shareCard.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -479,12 +424,16 @@ var AppModule = /** @class */ (function () {
                 _welcome_welcome_component__WEBPACK_IMPORTED_MODULE_9__["WelcomeComponent"],
                 _start_start_component__WEBPACK_IMPORTED_MODULE_10__["StartComponent"],
                 _hint_hint_component__WEBPACK_IMPORTED_MODULE_11__["HintComponent"],
-                _select_select_component__WEBPACK_IMPORTED_MODULE_12__["SelectComponent"],
-                _display_display_component__WEBPACK_IMPORTED_MODULE_13__["DisplayComponent"],
-                _share_share_component__WEBPACK_IMPORTED_MODULE_14__["ShareComponent"],
-                _end_end_component__WEBPACK_IMPORTED_MODULE_15__["EndComponent"],
-                _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_16__["ShareCardComponent"],
-                _allImage_allImage_component__WEBPACK_IMPORTED_MODULE_17__["AllImageComponent"]
+                _hintEn_hint_component__WEBPACK_IMPORTED_MODULE_12__["HintEnComponent"],
+                _select_select_component__WEBPACK_IMPORTED_MODULE_13__["SelectComponent"],
+                _selectEn_select_component__WEBPACK_IMPORTED_MODULE_14__["SelectEnComponent"],
+                _display_display_component__WEBPACK_IMPORTED_MODULE_15__["DisplayComponent"],
+                _displayEn_display_component__WEBPACK_IMPORTED_MODULE_16__["DisplayEnComponent"],
+                _share_share_component__WEBPACK_IMPORTED_MODULE_17__["ShareComponent"],
+                _shareEn_share_component__WEBPACK_IMPORTED_MODULE_18__["ShareEnComponent"],
+                _end_end_component__WEBPACK_IMPORTED_MODULE_19__["EndComponent"],
+                _endEn_end_component__WEBPACK_IMPORTED_MODULE_20__["EndEnComponent"],
+                _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_21__["ShareCardComponent"],
             ],
             providers: [
                 _services__WEBPACK_IMPORTED_MODULE_7__["RecordService"],
@@ -514,12 +463,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _start_start_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./start/start.component */ "./src/app/start/start.component.ts");
 /* harmony import */ var _hint_hint_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hint/hint.component */ "./src/app/hint/hint.component.ts");
-/* harmony import */ var _select_select_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./select/select.component */ "./src/app/select/select.component.ts");
-/* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
-/* harmony import */ var _share_share_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./share/share.component */ "./src/app/share/share.component.ts");
-/* harmony import */ var _end_end_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./end/end.component */ "./src/app/end/end.component.ts");
-/* harmony import */ var _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shareCard/shareCard.component */ "./src/app/shareCard/shareCard.component.ts");
-/* harmony import */ var _allImage_allImage_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./allImage/allImage.component */ "./src/app/allImage/allImage.component.ts");
+/* harmony import */ var _hintEn_hint_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hintEn/hint.component */ "./src/app/hintEn/hint.component.ts");
+/* harmony import */ var _select_select_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./select/select.component */ "./src/app/select/select.component.ts");
+/* harmony import */ var _selectEn_select_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./selectEn/select.component */ "./src/app/selectEn/select.component.ts");
+/* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
+/* harmony import */ var _displayEn_display_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./displayEn/display.component */ "./src/app/displayEn/display.component.ts");
+/* harmony import */ var _share_share_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./share/share.component */ "./src/app/share/share.component.ts");
+/* harmony import */ var _shareEn_share_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shareEn/share.component */ "./src/app/shareEn/share.component.ts");
+/* harmony import */ var _end_end_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./end/end.component */ "./src/app/end/end.component.ts");
+/* harmony import */ var _endEn_end_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./endEn/end.component */ "./src/app/endEn/end.component.ts");
+/* harmony import */ var _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./shareCard/shareCard.component */ "./src/app/shareCard/shareCard.component.ts");
+
+
+
+
 
 
 
@@ -533,12 +490,16 @@ var appRoutes = [
     { path: '', pathMatch: 'full', component: _start_start_component__WEBPACK_IMPORTED_MODULE_1__["StartComponent"] },
     { path: 'bund18/start', pathMatch: 'full', redirectTo: '' },
     { path: 'bund18/hint', pathMatch: 'full', component: _hint_hint_component__WEBPACK_IMPORTED_MODULE_2__["HintComponent"] },
-    { path: 'bund18/select', pathMatch: 'full', component: _select_select_component__WEBPACK_IMPORTED_MODULE_3__["SelectComponent"] },
-    { path: 'bund18/display/:imgSrc', pathMatch: 'full', component: _display_display_component__WEBPACK_IMPORTED_MODULE_4__["DisplayComponent"] },
-    { path: 'bund18/share', pathMatch: 'full', component: _share_share_component__WEBPACK_IMPORTED_MODULE_5__["ShareComponent"] },
-    { path: 'bund18/end', pathMatch: 'full', component: _end_end_component__WEBPACK_IMPORTED_MODULE_6__["EndComponent"] },
-    { path: 'bund18/shareCard/:id', pathMatch: 'full', component: _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_7__["ShareCardComponent"] },
-    { path: 'bund18/luisdfj', pathMatch: 'full', component: _allImage_allImage_component__WEBPACK_IMPORTED_MODULE_8__["AllImageComponent"] },
+    { path: 'bund18/hintEn', pathMatch: 'full', component: _hintEn_hint_component__WEBPACK_IMPORTED_MODULE_3__["HintEnComponent"] },
+    { path: 'bund18/select', pathMatch: 'full', component: _select_select_component__WEBPACK_IMPORTED_MODULE_4__["SelectComponent"] },
+    { path: 'bund18/selectEn', pathMatch: 'full', component: _selectEn_select_component__WEBPACK_IMPORTED_MODULE_5__["SelectEnComponent"] },
+    { path: 'bund18/display/:imgSrc', pathMatch: 'full', component: _display_display_component__WEBPACK_IMPORTED_MODULE_6__["DisplayComponent"] },
+    { path: 'bund18/displayEn/:imgSrc', pathMatch: 'full', component: _displayEn_display_component__WEBPACK_IMPORTED_MODULE_7__["DisplayEnComponent"] },
+    { path: 'bund18/share', pathMatch: 'full', component: _share_share_component__WEBPACK_IMPORTED_MODULE_8__["ShareComponent"] },
+    { path: 'bund18/shareEn', pathMatch: 'full', component: _shareEn_share_component__WEBPACK_IMPORTED_MODULE_9__["ShareEnComponent"] },
+    { path: 'bund18/end', pathMatch: 'full', component: _end_end_component__WEBPACK_IMPORTED_MODULE_10__["EndComponent"] },
+    { path: 'bund18/endEn', pathMatch: 'full', component: _endEn_end_component__WEBPACK_IMPORTED_MODULE_11__["EndEnComponent"] },
+    { path: 'bund18/shareCard/:id', pathMatch: 'full', component: _shareCard_shareCard_component__WEBPACK_IMPORTED_MODULE_12__["ShareCardComponent"] },
     { path: '**', redirectTo: '' },
 ];
 var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes, {
@@ -623,6 +584,81 @@ var DisplayComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/displayEn/display.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/displayEn/display.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".parent{\r\n  position: relative;\r\n  text-align: center;\r\n}\r\n\r\n.big-img {\r\n  width: 80%;\r\n  margin-top: 8%;\r\n}\r\n\r\n.footer {\r\n  width: 100%;\r\n  height: 7%;\r\n  position: fixed;\r\n  bottom: 3%;\r\n  text-align: center;\r\n}\r\n\r\n.footer img {\r\n  height: 100%;\r\n  width: auto;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/displayEn/display.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/displayEn/display.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"parent\"> \r\n    <img [src]=\"imgSrc\" class=\"big-img\" />\r\n    <div class=\"footer\">\r\n        <img src=\"../../assets/PNG Assets H5/Logos/DreamOn_Footer_Logo_JJ_Col_Butterfly_Hor.png\" alt=\"Can't load this image\">\r\n    </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/displayEn/display.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/displayEn/display.component.ts ***!
+  \************************************************/
+/*! exports provided: DisplayEnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DisplayEnComponent", function() { return DisplayEnComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DisplayEnComponent = /** @class */ (function () {
+    function DisplayEnComponent(router, activatedRoute) {
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.imgSrc = '';
+        this.pathPrefix = '../../assets/gif/';
+        this.imgSrc = this.pathPrefix + this.activatedRoute.snapshot.params['imgSrc'];
+    }
+    DisplayEnComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            _this.router.navigate(['bund18/shareEn']);
+        }, 3000);
+    };
+    DisplayEnComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-display-en',
+            template: __webpack_require__(/*! ./display.component.html */ "./src/app/displayEn/display.component.html"),
+            styles: [__webpack_require__(/*! ./display.component.css */ "./src/app/displayEn/display.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+    ], DisplayEnComponent);
+    return DisplayEnComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/end/end.component.css":
 /*!***************************************!*\
   !*** ./src/app/end/end.component.css ***!
@@ -630,7 +666,7 @@ var DisplayComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.bg {\r\n    /* background-image: url('../../images/background.jpg'); */\r\n    background-size: cover;    \r\n}"
+module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.bg {\r\n    /* background-image: url('../../images/background.jpg'); */\r\n    background-size: cover;    \r\n}\r\n\r\n.top {\r\n    margin-top: 25%;\r\n}\r\n\r\n.middle {\r\n    margin-top: 25%;\r\n    padding: 5%;\r\n}\r\n\r\n.font {\r\n    text-align: center;\r\n    margin-bottom: 10%;\r\n    font-size: 20px;\r\n}"
 
 /***/ }),
 
@@ -641,7 +677,7 @@ module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg\">  \r\n    <img src=\"../../assets/H5/end-15.png\" alt=\"Can't load this image\" name=\"canvas\"> \r\n</div>\r\n"
+module.exports = "<div class=\"bg\">  \r\n    <div class=\"top\">\r\n        <div class=\"font\">感谢您的参与</div>\r\n    </div> \r\n    <div class=\"middle\">\r\n        <img src=\"../../assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png\" alt=\"Can't load this image\" name=\"canvas\">\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -693,6 +729,76 @@ var EndComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/endEn/end.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/endEn/end.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.bg {\r\n    /* background-image: url('../../images/background.jpg'); */\r\n    background-size: cover;    \r\n}\r\n\r\n.top {\r\n    margin-top: 25%;\r\n}\r\n\r\n.middle {\r\n    margin-top: 25%;\r\n    padding: 5%;\r\n}\r\n\r\n.font {\r\n    text-align: center;\r\n    margin-bottom: 10%;\r\n    font-size: 20px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/endEn/end.component.html":
+/*!******************************************!*\
+  !*** ./src/app/endEn/end.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"bg\"> \r\n    <div class=\"top\">\r\n      <div class=\"font\">THANK YOU</div>\r\n      <div class=\"font\">YOUR SESSION IS COMPLETE</div>\r\n    </div> \r\n    <div class=\"middle\">\r\n      <img src=\"../../assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png\" alt=\"Can't load this image\" name=\"canvas\"> \r\n    </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/endEn/end.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/endEn/end.component.ts ***!
+  \****************************************/
+/*! exports provided: EndEnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EndEnComponent", function() { return EndEnComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_record_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_services/record.service */ "./src/app/_services/record.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var EndEnComponent = /** @class */ (function () {
+    function EndEnComponent(recordService, router) {
+        this.recordService = recordService;
+        this.router = router;
+    }
+    EndEnComponent.prototype.ngOnInit = function () {
+    };
+    EndEnComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-end-en',
+            template: __webpack_require__(/*! ./end.component.html */ "./src/app/endEn/end.component.html"),
+            styles: [__webpack_require__(/*! ./end.component.css */ "./src/app/endEn/end.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_record_service__WEBPACK_IMPORTED_MODULE_1__["RecordService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], EndEnComponent);
+    return EndEnComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/hint/hint.component.css":
 /*!*****************************************!*\
   !*** ./src/app/hint/hint.component.css ***!
@@ -700,7 +806,7 @@ var EndComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".parent{\r\n    position: relative;\r\n}\r\n\r\n.footer {\r\n    width: 100%;\r\n    height: 7%;\r\n    position: fixed;\r\n    bottom: 3%;\r\n    text-align: center;\r\n}\r\n\r\n.footer img {\r\n    height: 100%;\r\n    width: auto;\r\n}\r\n\r\n.background {\r\n    width: 100%;\r\n    height: auto;\r\n}"
+module.exports = ".parent{\r\n    position: relative;\r\n}\r\n\r\n.big-font {\r\n    padding-top: 55%;\r\n    text-align: center;\r\n    font-size: 25px;\r\n}\r\n\r\n.small-font {\r\n    padding-top: 15%;\r\n    text-align: center;\r\n    font-size: 18px;\r\n}\r\n\r\n.footer {\r\n    width: 100%;\r\n    height: 7%;\r\n    position: fixed;\r\n    bottom: 3%;\r\n    text-align: center;\r\n}\r\n\r\n.footer img {\r\n    height: 100%;\r\n    width: auto;\r\n}\r\n\r\n.background {\r\n    width: 100%;\r\n    height: auto;\r\n}"
 
 /***/ }),
 
@@ -711,7 +817,7 @@ module.exports = ".parent{\r\n    position: relative;\r\n}\r\n\r\n.footer {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"parent\">\r\n    <img src=\"../../assets/H5/3-05.png\" class=\"background\" alt=\"Can't load this image\">\r\n  <!-- <div class=\"footer\">\r\n      <img src=\"../../assets/PNG Assets H5/Logos/DreamOn_Footer_Logo_JJ_Col_Butterfly_Hor.png\" alt=\"Can't load this image\">\r\n  </div> -->\r\n</div>\r\n"
+module.exports = "<div class=\"parent\">\r\n  <!-- <img src=\"../../assets/H5/3-05.png\" class=\"background\" alt=\"Can't load this image\"> -->\r\n  <div class=\"big-font\">\r\n    <div>\r\n      抓住这个了解你自己的机会，\r\n    </div>\r\n    <div style=\"padding-top: 5%\">所以....是什么呢？</div>\r\n  </div>\r\n  <div class=\"small-font\">选一个你认为最符合你人设的关键词吧</div>\r\n  <div class=\"footer\">\r\n    <img src=\"../../assets/PNG Assets H5/Logos/DreamOn_Footer_Logo_JJ_Col_Butterfly_Hor.png\" alt=\"Can't load this image\">\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -780,6 +886,99 @@ var HintComponent = /** @class */ (function () {
             ng2_device_detector__WEBPACK_IMPORTED_MODULE_2__["Ng2DeviceService"]])
     ], HintComponent);
     return HintComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/hintEn/hint.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/hintEn/hint.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".parent{\r\n    position: relative;\r\n}\r\n\r\n.big-font {\r\n    padding-top: 55%;\r\n    text-align: center;\r\n    font-size: 19px;\r\n    padding-bottom: 15%;\r\n}\r\n\r\n.small-font {\r\n    text-align: center;\r\n    font-size: 18px;\r\n}\r\n\r\n.footer {\r\n    width: 100%;\r\n    height: 7%;\r\n    position: fixed;\r\n    bottom: 3%;\r\n    text-align: center;\r\n}\r\n\r\n.footer img {\r\n    height: 100%;\r\n    width: auto;\r\n}\r\n\r\n.background {\r\n    width: 100%;\r\n    height: auto;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/hintEn/hint.component.html":
+/*!********************************************!*\
+  !*** ./src/app/hintEn/hint.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"parent\">\r\n  <!-- <img src=\"../../assets/H5/3-05.png\" class=\"background\" alt=\"Can't load this image\"> -->\r\n  <div class=\"big-font\">\r\n    <div>\r\n      THIS IS A CHANGCE TO BE HEARD SO....\r\n    </div>\r\n    <div style=\"padding-top: 5%\">WHAT'S THE WORD?</div>\r\n  </div>\r\n  <div class=\"small-font\">Select the icon that describes</div>\r\n  <div class=\"small-font\">best who you think you are!</div>\r\n  <div class=\"footer\">\r\n    <img src=\"../../assets/PNG Assets H5/Logos/DreamOn_Footer_Logo_JJ_Col_Butterfly_Hor.png\" alt=\"Can't load this image\">\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/hintEn/hint.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/hintEn/hint.component.ts ***!
+  \******************************************/
+/*! exports provided: HintEnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HintEnComponent", function() { return HintEnComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng2_device_detector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ng2-device-detector */ "./node_modules/ng2-device-detector/index.js");
+/* harmony import */ var _services_record_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/record.service */ "./src/app/_services/record.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var HintEnComponent = /** @class */ (function () {
+    function HintEnComponent(recordService, router, deviceService) {
+        this.recordService = recordService;
+        this.router = router;
+        this.deviceService = deviceService;
+    }
+    HintEnComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        localStorage.clear();
+        setTimeout(function () {
+            _this.deviceInfo = _this.deviceService.getDeviceInfo();
+            //console.log(this.deviceInfo);    
+            var badge = {
+                browser: "" + _this.deviceInfo.browser,
+                version: "" + _this.deviceInfo.browser_version,
+                device: "" + _this.deviceInfo.device,
+                os: "" + _this.deviceInfo.os,
+            };
+            _this.recordService.requestBadge(badge).subscribe(function (resp) {
+                localStorage.setItem('badgeID', resp.id.toString());
+                _this.router.navigate(['bund18/selectEn']);
+            }, function (error) {
+                console.log(error);
+                _this.router.navigate(['bund18/selectEn']);
+            });
+        }, 2000);
+    };
+    HintEnComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hint-en',
+            template: __webpack_require__(/*! ./hint.component.html */ "./src/app/hintEn/hint.component.html"),
+            styles: [__webpack_require__(/*! ./hint.component.css */ "./src/app/hintEn/hint.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_record_service__WEBPACK_IMPORTED_MODULE_3__["RecordService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            ng2_device_detector__WEBPACK_IMPORTED_MODULE_2__["Ng2DeviceService"]])
+    ], HintEnComponent);
+    return HintEnComponent;
 }());
 
 
@@ -898,6 +1097,118 @@ var SelectComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/selectEn/select.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/selectEn/select.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".parent{\r\n    position: relative;\r\n}\r\n\r\ntable {\r\n    width: 100%;\r\n    margin-top: 10%;\r\n}\r\n\r\ntable td {\r\n    width: 50%;\r\n}\r\n\r\ntable td img {\r\n    width: 60%;\r\n    margin-top: 20%;\r\n}\r\n\r\n.left-col {\r\n    text-align: center;\r\n    font-size: 20px;\r\n}\r\n\r\n.right-col {\r\n    text-align: center;\r\n    font-size: 20px;\r\n}\r\n\r\n.footer {\r\n    width: 100%;\r\n    height: 7%;\r\n    position: fixed;\r\n    bottom: 3%;\r\n    text-align: center;\r\n}\r\n\r\n.footer img {\r\n    height: 100%;\r\n    width: auto;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/selectEn/select.component.html":
+/*!************************************************!*\
+  !*** ./src/app/selectEn/select.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"parent\">\r\n  <table>\r\n    <tr>\r\n      <td class=\"left-col\">\r\n        <img [hidden]=\"highlightIcon === 0\" src=\"../../assets/PNG Assets H5/Category Icons/Diamond_Icon_Col.png\" (click)=\"onClickDiamond()\">\r\n        <img [hidden]=\"highlightIcon !== 0\" src=\"../../assets/PNG Assets H5/Category Icons/Diamond_Icon_Wht.png\" (click)=\"onClickDiamond()\">\r\n        <div></div>\r\n      </td>\r\n      <td class=\"right-col\">\r\n        <img [hidden]=\"highlightIcon === 1\" src=\"../../assets/PNG Assets H5/Category Icons/GameBoy_Icon_Col.png\" (click)=\"onClickGameBoy()\">\r\n        <img [hidden]=\"highlightIcon !== 1\" src=\"../../assets/PNG Assets H5/Category Icons/GameBoy_Icon_Wht.png\" (click)=\"onClickGameBoy()\">\r\n        <div></div>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td class=\"left-col\">A DIAMONG IN THE ROUTH</td>\r\n      <td class=\"right-col\">TOTAL PLAYBOY/ PLAYGIRL</td>\r\n    </tr>\r\n    <tr>\r\n      <td class=\"left-col\">\r\n        <img [hidden]=\"highlightIcon === 2\" src=\"../../assets/PNG Assets H5/Category Icons/AirPlane_Icon_Col.png\" (click)=\"onClickAirPlane()\">\r\n        <img [hidden]=\"highlightIcon !== 2\" src=\"../../assets/PNG Assets H5/Category Icons/AirPlane_Icon_Wht.png\" (click)=\"onClickAirPlane()\">\r\n      </td>\r\n      <td class=\"right-col\">\r\n        <img [hidden]=\"highlightIcon === 3\" src=\"../../assets/PNG Assets H5/Category Icons/Heart_Icon_Col.png\" (click)=\"onClickHeart()\">\r\n        <img [hidden]=\"highlightIcon !== 3\" src=\"../../assets/PNG Assets H5/Category Icons/Heart_Icon_Blk.png\" (click)=\"onClickHeart()\">\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td class=\"left-col\">JETSET WORLD TRAVELER</td>\r\n      <td class=\"right-col\">ALWAYS LOOKING FOR LOVE</td>\r\n    </tr>\r\n    <tr>\r\n      <td class=\"left-col\">\r\n        <img [hidden]=\"highlightIcon === 4\" src=\"../../assets/PNG Assets H5/Category Icons/Saturn_Icon_Col.png\" (click)=\"onClickSaturn()\">\r\n        <img [hidden]=\"highlightIcon !== 4\" src=\"../../assets/PNG Assets H5/Category Icons/Saturn_Icon_Wht.png\" (click)=\"onClickSaturn()\">\r\n      </td>\r\n      <td class=\"right-col\">\r\n        <img [hidden]=\"highlightIcon === 5\" src=\"../../assets/PNG Assets H5/Category Icons/Cat_Icon_Col.png\" (click)=\"onClickCat()\">\r\n        <img [hidden]=\"highlightIcon !== 5\" src=\"../../assets/PNG Assets H5/Category Icons/Cat_Icon_Wht.png\" (click)=\"onClickCat()\">\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td class=\"left-col\">LOST IN SPACE</td>\r\n      <td class=\"right-col\">CRAZY CAT LOVER</td>\r\n    </tr>\r\n  </table>\r\n  <div *ngIf=\"showError\">网络错误...Please retry...</div>\r\n  <div class=\"footer\">\r\n      <img src=\"../../assets/PNG Assets H5/Logos/DreamOn_Footer_Logo_JJ_Col_Butterfly_Hor.png\" alt=\"Can't load this image\">\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/selectEn/select.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/selectEn/select.component.ts ***!
+  \**********************************************/
+/*! exports provided: SelectEnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectEnComponent", function() { return SelectEnComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_record_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/record.service */ "./src/app/_services/record.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SelectEnComponent = /** @class */ (function () {
+    function SelectEnComponent(router, recordService) {
+        this.router = router;
+        this.recordService = recordService;
+        this.highlightIcon = -1;
+        this.showError = false;
+    }
+    SelectEnComponent.prototype.ngOnInit = function () {
+    };
+    SelectEnComponent.prototype.goToDisplayPage = function (imgSrc) {
+        var _this = this;
+        setTimeout(function () {
+            _this.router.navigate(['bund18/displayEn/' + imgSrc]);
+        }, 1000);
+    };
+    SelectEnComponent.prototype.controlDevice = function (deviceId) {
+        var _this = this;
+        this.recordService.controlDevice(deviceId).subscribe(function (resp) {
+            _this.showError = false;
+            _this.goToDisplayPage(deviceId + ".gif");
+        }, function (error) {
+            console.log(error);
+            _this.showError = true;
+        });
+    };
+    SelectEnComponent.prototype.onClickDiamond = function () {
+        this.highlightIcon = 0;
+        this.controlDevice(1);
+    };
+    SelectEnComponent.prototype.onClickGameBoy = function () {
+        this.highlightIcon = 1;
+        this.controlDevice(2);
+    };
+    SelectEnComponent.prototype.onClickAirPlane = function () {
+        this.highlightIcon = 2;
+        this.controlDevice(3);
+    };
+    SelectEnComponent.prototype.onClickHeart = function () {
+        this.highlightIcon = 3;
+        this.controlDevice(4);
+    };
+    SelectEnComponent.prototype.onClickSaturn = function () {
+        this.highlightIcon = 4;
+        this.controlDevice(5);
+    };
+    SelectEnComponent.prototype.onClickCat = function () {
+        this.highlightIcon = 5;
+        this.controlDevice(6);
+    };
+    SelectEnComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-select-en',
+            template: __webpack_require__(/*! ./select.component.html */ "./src/app/selectEn/select.component.html"),
+            styles: [__webpack_require__(/*! ./select.component.css */ "./src/app/selectEn/select.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_record_service__WEBPACK_IMPORTED_MODULE_2__["RecordService"]])
+    ], SelectEnComponent);
+    return SelectEnComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/selective-preloading-strategy.ts":
 /*!**************************************************!*\
   !*** ./src/app/selective-preloading-strategy.ts ***!
@@ -931,7 +1242,7 @@ var SelectivePreloadingStrategy = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.bg {\r\n    /* background-image: url('../../images/background.jpg'); */\r\n    background-size: cover;    \r\n}"
+module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.bg {\r\n    /* background-image: url('../../images/background.jpg'); */\r\n    background-size: cover;    \r\n}\r\n\r\n.fixed {\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n}"
 
 /***/ }),
 
@@ -942,7 +1253,7 @@ module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"bg\">  \r\n    <img src=\"../../assets/H5/wheel-14.png\" alt=\"Can't load this image\" name=\"canvas\"> \r\n</div>\r\n"
+module.exports = "<div class=\"bg\">  \r\n    <div class=\"fixed\">\r\n        <img src=\"../../assets/H5/FerrisWheel.png\" alt=\"Can't load this image\" name=\"canvas\"> \r\n    </div>\r\n    <div style=\"margin-top: 30%; font-size: 20px\">请分享这个梦幻之旅吧！</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1115,6 +1426,126 @@ var ShareCardComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shareEn/share.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/shareEn/share.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".bg img {\r\n    max-width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.bg {\r\n    /* background-image: url('../../images/background.jpg'); */\r\n    background-size: cover;    \r\n}\r\n\r\n.fixed {\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/shareEn/share.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/shareEn/share.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"bg\">  \r\n  <div class=\"fixed\">\r\n    <img src=\"../../assets/H5/FerrisWheel.png\" alt=\"Can't load this image\" name=\"canvas\"> \r\n  </div>\r\n  <div style=\"margin-top: 30%; font-size: 20px\">PLEASE SHARE THE DREAM!</div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/shareEn/share.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/shareEn/share.component.ts ***!
+  \********************************************/
+/*! exports provided: ShareEnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShareEnComponent", function() { return ShareEnComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_record_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_services/record.service */ "./src/app/_services/record.service.ts");
+/* harmony import */ var weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! weixin-js-sdk */ "./node_modules/weixin-js-sdk/index.js");
+/* harmony import */ var weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ShareEnComponent = /** @class */ (function () {
+    function ShareEnComponent(recordService, router) {
+        this.recordService = recordService;
+        this.router = router;
+    }
+    ShareEnComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.SetupWechatShare();
+        setTimeout(function () {
+            _this.router.navigate(['bund18/endEn']); //for test
+        }, 2000);
+    };
+    ShareEnComponent.prototype.SendShareInfoToServer = function (op) {
+        this.router.navigate(['bund18/endEn']);
+    };
+    ShareEnComponent.prototype.SetupWechatShare = function () {
+        var _this = this;
+        this.recordService.getWxParameters("welcome").subscribe(function (resp) {
+            localStorage.setItem('appId', resp.appId.toString());
+            localStorage.setItem('nonceStr', resp.nonceStr.toString());
+            localStorage.setItem('timestamp', resp.timestamp.toString());
+            localStorage.setItem('signature', resp.signature.toString());
+            var imageUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].domainUrl + '/assets/vignette_small.jpg';
+            //load from pre-load parameters, also from 3th party service   
+            weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2__["config"]({
+                debug: false,
+                appId: localStorage.getItem('appId'),
+                timestamp: localStorage.getItem('timestamp'),
+                nonceStr: localStorage.getItem('nonceStr'),
+                signature: localStorage.getItem('signature'),
+                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+            });
+            weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2__["ready"](function () {
+                weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2__["onMenuShareTimeline"]({
+                    title: '摇一摇，摇出你的2019新年运势',
+                    link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+                    imgUrl: imageUrl,
+                    success: function () { _this.SendShareInfoToServer("moments"); },
+                    cancel: function () { },
+                }),
+                    weixin_js_sdk__WEBPACK_IMPORTED_MODULE_2__["onMenuShareAppMessage"]({
+                        title: '摇一摇，摇出你的2019新年运势',
+                        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
+                        link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+                        imgUrl: imageUrl,
+                        type: 'link',
+                        success: function () { _this.SendShareInfoToServer("friends"); },
+                        cancel: function () { },
+                    });
+            });
+        });
+    };
+    ShareEnComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-share-en',
+            template: __webpack_require__(/*! ./share.component.html */ "./src/app/shareEn/share.component.html"),
+            styles: [__webpack_require__(/*! ./share.component.css */ "./src/app/shareEn/share.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_record_service__WEBPACK_IMPORTED_MODULE_1__["RecordService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ShareEnComponent);
+    return ShareEnComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/start/start.component.css":
 /*!*******************************************!*\
   !*** ./src/app/start/start.component.css ***!
@@ -1133,7 +1564,7 @@ module.exports = "\r\n.parent{\r\n    position: relative;\r\n    text-align: cen
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"parent\">\r\n  <img src=\"../../assets/H5/2-04.png\" alt=\"Can't load this image\" class=\"logo\">\r\n  <div class=\"buttons\">\r\n    <div *ngIf=\"waiting\">排队中...Please wait...</div>\r\n    <div>\r\n        <input class=\"button\" type=\"button\" value=\"开始吧\" (click)=\"onClickEntry()\" />\r\n    </div>\r\n    <div>\r\n        <input class=\"button\" type=\"button\" value=\"Start\" (click)=\"onClickEntry()\" />\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"parent\">\r\n  <img src=\"../../assets/H5/2-04.png\" alt=\"Can't load this image\" class=\"logo\">\r\n  <div class=\"buttons\">\r\n    <div *ngIf=\"waiting\">排队中...Please wait...</div>\r\n    <div>\r\n      <input class=\"button\" type=\"button\" value=\"开始吧\" (click)=\"onClickEntry('')\" />\r\n    </div>\r\n    <div>\r\n      <input class=\"button\" type=\"button\" value=\"Start\" (click)=\"onClickEntry('En')\" />\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1170,7 +1601,7 @@ var StartComponent = /** @class */ (function () {
     }
     StartComponent.prototype.ngOnInit = function () {
     };
-    StartComponent.prototype.onClickEntry = function () {
+    StartComponent.prototype.onClickEntry = function (tag) {
         var _this = this;
         if (this.waiting) {
             return;
@@ -1178,11 +1609,11 @@ var StartComponent = /** @class */ (function () {
         this.waiting = true;
         this.recordService.getLicense().subscribe(function (resp) {
             _this.waiting = false;
-            _this.router.navigate(['bund18/hint']);
+            _this.router.navigate(['bund18/hint' + tag]);
         }, function (error) {
             console.log(error);
             setTimeout(function () {
-                _this.onClickEntry();
+                _this.onClickEntry(tag);
             }, 2000);
         });
     };
