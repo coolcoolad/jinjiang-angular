@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import imgList from '../../imgList';
 import { RecordService } from '../_services/record.service';
 
 @Component({
@@ -17,10 +16,6 @@ export class StartComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // for(let i=0 ; i < imgList.length; i++) {
-    //   let img = new Image();
-    //   img.src = imgList[i];
-    // }
   }
 
   onClickEntry() {

@@ -15,40 +15,24 @@
       background-color: black;
       height: 100%;
     }
+    .center {
+      margin-top: 40%;
+    }
   </style>
 
   <script src="./assets/imgList.js"></script>
-  <!-- <script src="assets/resLoader.js"></script> -->
   <script>
       for(var i=0 ; i < imgList.length; i++) {
         var img = document.createElement('img');
         img.src = imgList[i];
       }
-      // var loader = new resLoader({
-      //   resources : imgList,
-      //   onStart : function(total){
-      //     console.log('start:'+total);
-      //   },
-      //   onProgress : function(current, total){
-      //     console.log(current+'/'+total);
-      //     var percent = current/total*100;
-      //     $('.progressbar').css('width', percent+'%');
-      //     $('.progresstext .current').text(current);
-      //     $('.progresstext .total').text(total);
-      //   },
-      //   onComplete : function(total){
-      //     alert('加载完毕:'+total+'个资源');
-      //   }
-      // });
-
-      // loader.start();
   </script>
 </head>
 <body>
   <app style="text-align: center">
-    <h2>Loading</h2>
-    <div>
-        <img src="assets/gif/loading-page.gif" style="width: 50%"/>
+    <div class="center">
+      <h2>Loading</h2>
+      <img src="assets/gif/loading-page.gif" style="width: 50%"/>
     </div>
   </app>
 <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="scripts.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
