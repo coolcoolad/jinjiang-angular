@@ -59,11 +59,19 @@ export class RecordService {
     return this.http.get<WxPara>(`${environment.wxloginUrl}${page}`, this.httpOptions);
   }
 
-  getLicense() {
-    return this.http.get(`${environment.licenseUrl}`, this.httpOptions);
+  requestLicense() {
+    return this.http.get(`${environment.licenseRequestUrl}`, this.httpOptions);
   }
 
-  controlDevice(deviceId: Number) {
-    return this.http.get(`${environment.deviceControlUrl}/${deviceId}`);
+  releaseLicense(selectId) {
+    return this.http.get(`${environment.licenseReleaseUrl}/${selectId}`, this.httpOptions);
+  }
+
+  controlDevice(selectId: Number) {
+    return this.http.get(`${environment.deviceControlUrl}/${selectId}`);
+  }
+  
+  choiceReport(selectId: Number) {
+    return this.http.get(`${environment.choiceReportUrl}/${selectId}`);
   }
 }

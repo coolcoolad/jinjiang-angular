@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./end.component.css']
 })
 export class EndComponent implements OnInit {
+  private languageFlag = 'ch';
 
   constructor(
     private recordService: RecordService,
@@ -15,6 +16,7 @@ export class EndComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.languageFlag = localStorage.getItem('languageFlag');
   }
 
 }

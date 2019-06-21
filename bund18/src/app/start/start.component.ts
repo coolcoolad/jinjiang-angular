@@ -18,18 +18,19 @@ export class StartComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClickEntry(tag) {
+  onClickEntry(languageFlag: string) {
     if (this.waiting) {
       return;
     }
+    localStorage.setItem('languageFlag', languageFlag);
     this.waiting = true;
-    this.recordService.getLicense().subscribe(resp => {
+    this.recordService.requestLicense().subscribe(resp => {
       this.waiting = false;
-      this.router.navigate(['bund18/hint'+tag]);
+      this.router.navigate(['bund18/hint']);
     }, error => {
       console.log(error);
       setTimeout(() => {
-        this.onClickEntry(tag);
+        this.onClickEntry(languageFlag);
       }, 2000);
     });
   } 

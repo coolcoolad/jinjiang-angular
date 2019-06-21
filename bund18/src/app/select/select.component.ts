@@ -10,6 +10,7 @@ import { RecordService } from '../_services/record.service';
 export class SelectComponent implements OnInit { 
   private highlightIcon = -1;
   private showError = false;
+  private languageFlag = 'ch';
   
   constructor(
     private router: Router,
@@ -17,6 +18,7 @@ export class SelectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.languageFlag = localStorage.getItem('languageFlag');
   }
 
   private goToDisplayPage(imgSrc: String) {
@@ -25,10 +27,11 @@ export class SelectComponent implements OnInit {
     }, 1000);
   }
 
-  private controlDevice(deviceId: Number) {
-    this.recordService.controlDevice(deviceId).subscribe(resp => {
+  private controlDevice(selectId: Number) {
+    localStorage.setItem('selectId',selectId.toString());
+    this.recordService.controlDevice(selectId).subscribe(resp => {
       this.showError = false;
-      this.goToDisplayPage(`${deviceId}.gif`);
+      this.goToDisplayPage(`${selectId}.gif`);
     }, error => {
       console.log(error);
       this.showError = true;
@@ -64,4 +67,5 @@ export class SelectComponent implements OnInit {
     this.highlightIcon = 5;
     this.controlDevice(6);
   }
+  
 }
