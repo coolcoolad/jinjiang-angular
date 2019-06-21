@@ -8,8 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class DisplayComponent implements OnInit {
-  private imgSrc = '';
-  private pathPrefix = '../../assets/gif/';
+  imgSrc = '';
+  pathPrefix = '../../assets/gif/';
 
   constructor(
     private router: Router,
@@ -21,6 +21,6 @@ export class DisplayComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate(['bund18/share']);
-    }, 3000);
+    }, 5000);
   }
 }

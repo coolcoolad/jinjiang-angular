@@ -37,6 +37,6 @@ export class HintComponent implements OnInit {
         console.log(error);
         this.router.navigate(['bund18/select']);
       });
-    }, 2000);
+    }, 3000);
   }
 }

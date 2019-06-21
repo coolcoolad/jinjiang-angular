@@ -9,8 +9,8 @@ import { RecordService } from '../_services/record.service';
 })
 
 export class ShareCardComponent implements OnInit {
-  private id = -1;
-  private pathPrefix = '../../assets/PNG Assets H5/Postcards/';
+  id = -1;
+  pathPrefix = '../../assets/PNG Assets H5/Postcards/';
 
   constructor(
     private router: Router,

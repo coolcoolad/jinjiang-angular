@@ -1,15 +1,15 @@
 export const environment = {
   production: true,
-  recordUrl: 'http://47.101.159.35:8000/api/bund18/record/',
-  statUrl: 'http://47.101.159.35:8000/api/bund18/stat/',  
-
-  badgeUrl: 'http://47.101.159.35:8000/api/bund18/badge/',
-  shareUrl: 'http://47.101.159.35:8000/api/bund18/share/',
-  
-  deviceCheckUrl: 'http://47.101.159.35:8000/api/bund18/device/check/',
-  deviceOnUrl: 'http://47.101.159.35:8000/api/bund18/device/on/',
-  deviceOffUrl: 'http://47.101.159.35:8000/api/bund18/device/off/',
-
-  wxloginUrl: 'http://47.101.159.35:8000/api/bund18/wxlogin/',
-  domainUrl: 'http://mm.wuzhanggui.shop',
+  recordUrl: 'http://www.fullrank.top/api/jjpark/record/',
+  badgeUrl: 'http://www.fullrank.top/api/jjpark/badge/',
+  shareUrl: 'http://www.fullrank.top/api/jjpark/share/',
+  statUrl: 'http://www.fullrank.top/api/jjpark/stat/',
+  deviceCheckUrl: 'http://www.fullrank.top/api/bund18/device/check/',
+  deviceOnUrl: 'http://www.fullrank.top/api/jjpark/device/on/',
+  deviceOffUrl: 'http://www.fullrank.top/api/jjpark/device/off/',
+  wxloginUrl: 'http://www.fullrank.top/api/jjpark/wxlogin/',
+  licenseUrl: 'http://www.fullrank.top/api/jjpark/device/control/request',
+  deviceControlUrl: 'http://www.fullrank.top/api/jjpark/device/control',
+  deviceReleaseUrl: 'http://www.fullrank.top/api/jjpark/device/release',
+  domainUrl: 'http://www.fullrank.top/',
 };

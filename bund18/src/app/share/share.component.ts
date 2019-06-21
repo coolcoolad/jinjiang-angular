@@ -33,7 +33,7 @@ export class ShareComponent implements OnInit {
       localStorage.setItem('nonceStr', resp.nonceStr.toString());
       localStorage.setItem('timestamp', resp.timestamp.toString());
       localStorage.setItem('signature', resp.signature.toString());
-      
+
       var imageUrl = environment.domainUrl + '/assets/vignette_small.jpg';    
 
       //load from pre-load parameters, also from 3th party service   
@@ -44,24 +44,24 @@ export class ShareComponent implements OnInit {
         nonceStr: localStorage.getItem('nonceStr'),
         signature: localStorage.getItem('signature'),
         jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-      });    
+      });
 
       wx.ready(() => {
         wx.onMenuShareTimeline({
           title: '摇一摇，摇出你的2019新年运势',
-          link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+          link: '',
           imgUrl: imageUrl,
-          success: () => {this.SendShareInfoToServer("moments");},
+          success: () => {this.SendShareInfoToServer( "moments" ); },
           cancel: () => {},
         }),
         wx.onMenuShareAppMessage({
           title: '摇一摇，摇出你的2019新年运势',
           desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
-          link: 'http://mm.wuzhanggui.shop/bund18/welcome',
+          link: '',
           imgUrl: imageUrl,
           type: 'link',
-          success: ()=>{this.SendShareInfoToServer("friends");},
-          cancel: ()=>{},
+          success: () => {this.SendShareInfoToServer("friends");},
+          cancel: () => {},
         })
       });
     });
