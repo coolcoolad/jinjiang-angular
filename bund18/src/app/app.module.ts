@@ -19,7 +19,6 @@ import { DisplayComponent } from './display/display.component';
 import { ShareComponent } from './share/share.component';
 import { EndComponent } from './end/end.component';
 import { ShareCardComponent } from './shareCard/shareCard.component';
-import { AllImageComponent } from './allImage/allImage.component';
 
 @NgModule({
   imports: [
@@ -39,7 +38,6 @@ import { AllImageComponent } from './allImage/allImage.component';
     ShareComponent,
     EndComponent,
     ShareCardComponent,
-    AllImageComponent
   ],  
   providers: [
     RecordService,

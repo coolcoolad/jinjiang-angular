@@ -1,3 +1,7 @@
 <div class="bg">  
-    <img src="../../assets/H5/wheel-14.png" alt="Can't load this image" name="canvas"> 
+    <div class="fixed">
+        <img src="../../assets/H5/FerrisWheel.png" alt="Can't load this image" name="canvas"> 
+    </div>
+    <div *ngIf="languageFlag === 'ch'" style="margin-top: 30%; font-size: 20px">请分享这个梦幻之旅吧！</div>
+    <div *ngIf="languageFlag === 'en'" style="margin-top: 30%; font-size: 20px">PLEASE SHARE THE DREAM!</div>
 </div>

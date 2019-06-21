@@ -7,3 +7,18 @@
     /* background-image: url('../../images/background.jpg'); */
     background-size: cover;    
 }
+
+.top {
+    margin-top: 25%;
+}
+
+.middle {
+    margin-top: 25%;
+    padding: 5%;
+}
+
+.font {
+    text-align: center;
+    margin-bottom: 10%;
+    font-size: 20px;
+}

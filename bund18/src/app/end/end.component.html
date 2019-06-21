@@ -1,3 +1,12 @@
 <div class="bg">  
-    <img src="../../assets/H5/end-15.png" alt="Can't load this image" name="canvas"> 
+    <div *ngIf="languageFlag === 'ch'" class="top">
+        <div class="font">感谢您的参与</div>
+    </div> 
+    <div *ngIf="languageFlag === 'en'" class="top">
+      <div class="font">THANK YOU</div>
+      <div class="font">YOUR SESSION IS COMPLETE</div>
+    </div> 
+    <div class="middle">
+        <img src="../../assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png" alt="Can't load this image" name="canvas">
+    </div>
 </div>

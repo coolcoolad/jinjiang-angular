@@ -1,5 +1,5 @@
 <div class="parent">
-  <table>
+  <table *ngIf="languageFlag === 'ch'">
     <tr>
       <td class="left-col">
         <img [hidden]="highlightIcon === 0" src="../../assets/PNG Assets H5/Category Icons/Diamond_Icon_Col.png" (click)="onClickDiamond()">
@@ -43,6 +43,53 @@
     <tr>
       <td class="left-col">逃离星球</td>
       <td class="right-col">铲屎官</td>
+    </tr>
+  </table>
+
+  <table *ngIf="languageFlag === 'en'">
+    <tr>
+      <td class="left-col">
+        <img [hidden]="highlightIcon === 0" src="../../assets/PNG Assets H5/Category Icons/Diamond_Icon_Col.png" (click)="onClickDiamond()">
+        <img [hidden]="highlightIcon !== 0" src="../../assets/PNG Assets H5/Category Icons/Diamond_Icon_Wht.png" (click)="onClickDiamond()">
+        <div></div>
+      </td>
+      <td class="right-col">
+        <img [hidden]="highlightIcon === 1" src="../../assets/PNG Assets H5/Category Icons/GameBoy_Icon_Col.png" (click)="onClickGameBoy()">
+        <img [hidden]="highlightIcon !== 1" src="../../assets/PNG Assets H5/Category Icons/GameBoy_Icon_Wht.png" (click)="onClickGameBoy()">
+        <div></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">A DIAMONG IN THE ROUTH</td>
+      <td class="right-col">TOTAL PLAYBOY/ PLAYGIRL</td>
+    </tr>
+    <tr>
+      <td class="left-col">
+        <img [hidden]="highlightIcon === 2" src="../../assets/PNG Assets H5/Category Icons/AirPlane_Icon_Col.png" (click)="onClickAirPlane()">
+        <img [hidden]="highlightIcon !== 2" src="../../assets/PNG Assets H5/Category Icons/AirPlane_Icon_Wht.png" (click)="onClickAirPlane()">
+      </td>
+      <td class="right-col">
+        <img [hidden]="highlightIcon === 3" src="../../assets/PNG Assets H5/Category Icons/Heart_Icon_Col.png" (click)="onClickHeart()">
+        <img [hidden]="highlightIcon !== 3" src="../../assets/PNG Assets H5/Category Icons/Heart_Icon_Blk.png" (click)="onClickHeart()">
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">JETSET WORLD TRAVELER</td>
+      <td class="right-col">ALWAYS LOOKING FOR LOVE</td>
+    </tr>
+    <tr>
+      <td class="left-col">
+        <img [hidden]="highlightIcon === 4" src="../../assets/PNG Assets H5/Category Icons/Saturn_Icon_Col.png" (click)="onClickSaturn()">
+        <img [hidden]="highlightIcon !== 4" src="../../assets/PNG Assets H5/Category Icons/Saturn_Icon_Wht.png" (click)="onClickSaturn()">
+      </td>
+      <td class="right-col">
+        <img [hidden]="highlightIcon === 5" src="../../assets/PNG Assets H5/Category Icons/Cat_Icon_Col.png" (click)="onClickCat()">
+        <img [hidden]="highlightIcon !== 5" src="../../assets/PNG Assets H5/Category Icons/Cat_Icon_Wht.png" (click)="onClickCat()">
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">LOST IN SPACE</td>
+      <td class="right-col">CRAZY CAT LOVER</td>
     </tr>
   </table>
   <div *ngIf="showError">网络错误...Please retry...</div>

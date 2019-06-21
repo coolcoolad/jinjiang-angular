@@ -12,6 +12,7 @@ import { BadgeRequest } from '../_models';
 export class HintComponent implements OnInit { 
   private deviceInfo;
   private valid: boolean;
+  private languageFlag = 'ch';
 
   constructor(
     private recordService: RecordService,
@@ -20,7 +21,8 @@ export class HintComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    localStorage.clear();
+    this.languageFlag = localStorage.getItem('languageFlag');
+
     setTimeout(()=> {
       this.deviceInfo = this.deviceService.getDeviceInfo();
       //console.log(this.deviceInfo);    

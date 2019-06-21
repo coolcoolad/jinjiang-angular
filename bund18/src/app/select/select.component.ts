@@ -8,8 +8,10 @@ import { RecordService } from '../_services/record.service';
   styleUrls: ['./select.component.css']
 })
 export class SelectComponent implements OnInit {
-  highlightIcon = -1;
-  showError = false;
+  private highlightIcon = -1;
+  private showError = false;
+  private languageFlag = 'ch';
+  private loading = false;
 
   constructor(
     private router: Router,
@@ -17,20 +19,28 @@ export class SelectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.languageFlag = localStorage.getItem('languageFlag');
   }
 
   private goToDisplayPage(imgSrc: String) {
     setTimeout(() => {
+      this.loading = false;
       this.router.navigate(['bund18/display/' + imgSrc]);
-    }, 1000);
+    }, 500);
   }
 
-  private controlDevice(deviceId: Number) {
-    this.recordService.controlDevice(deviceId).subscribe(resp => {
+  private controlDevice(selectId: Number) {
+    if (this.loading) {
+      return;
+    }
+    this.loading = true;
+    localStorage.setItem('selectId',selectId.toString());
+    this.recordService.controlDevice(selectId).subscribe(resp => {
       this.showError = false;
-      this.goToDisplayPage(`${deviceId}.gif`);
+      this.goToDisplayPage(`${selectId}.gif`);
     }, error => {
       console.log(error);
+      this.loading = false;
       this.showError = true;
     });
   }
@@ -64,4 +74,5 @@ export class SelectComponent implements OnInit {
     this.highlightIcon = 5;
     this.controlDevice(6);
   }
+
 }
