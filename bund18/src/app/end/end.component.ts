@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./end.component.css']
 })
 export class EndComponent implements OnInit {
-  private languageFlag = 'ch';
+  public languageFlag = 'ch';
 
   constructor(
     private recordService: RecordService,

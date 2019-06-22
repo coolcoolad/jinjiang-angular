@@ -18,6 +18,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   onClickEntry() {
-    this.router.navigate(['bund18/start']);
+    this.router.navigate(['start']);
   }
 }

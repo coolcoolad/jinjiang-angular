@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Record, RecordPost, RecordStat, WxPara } from '../_models';
+import { Record, RecordPost, RecordStat, WxPara, License } from '../_models';
 import { BadgeRequest, ShareLogPost, Badge, ShareLog } from '../_models';
 import { environment } from '../../environments/environment';
+import { Choice, ChoiceRequest } from '../_models/choice';
 
 @Injectable()
 export class RecordService {
-  constructor(private http:HttpClient) { }  
+  constructor(private http: HttpClient) { }
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -23,11 +24,11 @@ export class RecordService {
     return this.http.post<Record>(`${environment.recordUrl}`, record, this.httpOptions);
   }
 
-  put(id: number, record:RecordPost){
+  put(id: number, record: RecordPost){
     return this.http.put<Record>(`${environment.recordUrl}${id}/`, record, this.httpOptions);
-  }  
+  }
 
-  retrieve(id: number){
+  retrieve(id: number) {
     return this.http.get<Record>(`${environment.recordUrl}${id}/`, this.httpOptions);
   }
 
@@ -47,31 +48,40 @@ export class RecordService {
     return this.http.get(`${environment.deviceCheckUrl}`, this.httpOptions);
   }
 
-  turnOnDevice(){
+  turnOnDevice() {
     return this.http.get(`${environment.deviceOnUrl}`, this.httpOptions);
   }
 
-  turnOffDevice(){
+  turnOffDevice() {
     return this.http.get(`${environment.deviceOffUrl}`, this.httpOptions);
   }
 
-  getWxParameters(page:string) {
-    return this.http.get<WxPara>(`${environment.wxloginUrl}${page}`, this.httpOptions);
+  getWxParameters(page: string) {
+    return this.http.get<WxPara>(`${environment.wxloginUrl}${page}/`, this.httpOptions);
   }
 
   requestLicense() {
-    return this.http.get(`${environment.licenseRequestUrl}`, this.httpOptions);
+    return this.http.get<License>(`${environment.licenseRequestUrl}`, this.httpOptions);
   }
 
   releaseLicense(selectId) {
-    return this.http.get(`${environment.licenseReleaseUrl}/${selectId}`, this.httpOptions);
+    return this.http.get(`${environment.licenseReleaseUrl}/${selectId}/`, this.httpOptions);
   }
 
-  controlDevice(selectId: Number) {
-    return this.http.get(`${environment.deviceControlUrl}/${selectId}`);
+  controlDevice(selectId: number) {
+    return this.http.get(`${environment.deviceCheckUrl}${selectId}/`);
   }
-  
-  choiceReport(selectId: Number) {
-    return this.http.get(`${environment.choiceReportUrl}/${selectId}`);
+
+  openDevice(selectId: number) {
+    return this.http.get(`${environment.deviceOnUrl}${selectId}/`);
+  }
+
+  closeDevice(selectId: number) {
+    return this.http.get(`${environment.deviceOffUrl}${selectId}/`);
+  }
+
+  choiceReport(selectId: number) {
+    const report: ChoiceRequest = {choice: selectId };
+    return this.http.post<Choice>(`${environment.choiceReportUrl}/`, report, this.httpOptions);
   }
 }

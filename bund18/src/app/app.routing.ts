@@ -11,14 +11,14 @@ import { EndComponent } from './end/end.component';
 import { ShareCardComponent } from './shareCard/shareCard.component';
 
 const appRoutes: Routes = [
-  { path: '', pathMatch:'full', component:StartComponent },
-  { path: 'bund18/start', pathMatch:'full', redirectTo: ''},
-  { path: 'bund18/hint', pathMatch:'full', component:HintComponent},
-  { path: 'bund18/select', pathMatch:'full', component:SelectComponent},
-  { path: 'bund18/display/:imgSrc', pathMatch:'full', component: DisplayComponent },
-  { path: 'bund18/share' , pathMatch:'full', component:ShareComponent},
-  { path: 'bund18/end' , pathMatch:'full', component:EndComponent},
-  { path: 'bund18/shareCard/:id', pathMatch:'full', component: ShareCardComponent },
+  { path: '', pathMatch: 'full', component: StartComponent },
+  { path: 'start', pathMatch: 'full', redirectTo: ''},
+  { path: 'hint', pathMatch: 'full', component: HintComponent},
+  { path: 'select', pathMatch: 'full', component: SelectComponent},
+  { path: 'display/:imgSrc', pathMatch: 'full', component: DisplayComponent },
+  { path: 'share' , pathMatch: 'full', component: ShareComponent},
+  { path: 'end' , pathMatch: 'full', component: EndComponent},
+  { path: 'shareCard/:id', pathMatch: 'full', component: ShareCardComponent },
 
   { path: '**', redirectTo: '' },
 ];

@@ -9,10 +9,10 @@ import { BadgeRequest } from '../_models';
   templateUrl: './hint.component.html',
   styleUrls: ['./hint.component.css']
 })
-export class HintComponent implements OnInit { 
+export class HintComponent implements OnInit {
   private deviceInfo;
   private valid: boolean;
-  private languageFlag = 'ch';
+  public languageFlag = 'ch';
 
   constructor(
     private recordService: RecordService,
@@ -23,10 +23,10 @@ export class HintComponent implements OnInit {
   ngOnInit() {
     this.languageFlag = localStorage.getItem('languageFlag');
 
-    setTimeout(()=> {
+    setTimeout(() => {
       this.deviceInfo = this.deviceService.getDeviceInfo();
-      //console.log(this.deviceInfo);    
-      let badge: BadgeRequest = {
+
+      const badge: BadgeRequest = {
         browser: `${this.deviceInfo.browser}`,
         version: `${this.deviceInfo.browser_version}`,
         device: `${this.deviceInfo.device}`,
@@ -34,10 +34,10 @@ export class HintComponent implements OnInit {
       }
       this.recordService.requestBadge(badge).subscribe(resp=>{
         localStorage.setItem('badgeID', resp.id.toString());
-        this.router.navigate(['bund18/select']);
+        this.router.navigate(['select']);
       }, error => {
         console.log(error);
-        this.router.navigate(['bund18/select']);
+        this.router.navigate(['select']);
       });
     }, 3000);
   }

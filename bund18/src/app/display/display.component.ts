@@ -24,34 +24,34 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    let selectId = Number.parseInt(localStorage.getItem('selectId'));
+    const selectId = parseInt(localStorage.getItem('selectId'));
     this.recordService.choiceReport(selectId).subscribe(resp => {}, error => {console.log(error)});
     setTimeout(() => {
-      this.router.navigate(['bund18/share']);
+      this.router.navigate(['share']);
     }, 5000);
   }
-  
+
   SendShareInfoToServer(op:string) {
-    let sharepost: ShareLogPost = {
+    const sharepost: ShareLogPost = {
       badgeID: parseInt(localStorage.getItem('badgeID')),
-      selectID: Number.parseInt(localStorage.getItem('selectId')),
+      selectID: parseInt(localStorage.getItem('selectId')),
       operation: op,
     };
 
     this.recordService.saveShareInfo(sharepost).subscribe(()=>{
-      console.log("add one share info to database");
+      console.log('add one share info to database');
     }, error => {
       console.log(error);
     });
-    this.router.navigate(['bund18/end']);
+    this.router.navigate(['end']);
   }
 
   SetupWechatShare() {
-    this.recordService.getWxParameters("welcome").subscribe((resp)=>{
-      var imageUrl = environment.domainUrl + '/assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png';
-      var shareLink = environment.domainUrl + '/bund18/shareCard/' + localStorage.getItem('selectId');    
+    this.recordService.getWxParameters( 'welcome' ).subscribe((resp) => {
+      const imageUrl = environment.domainUrl + '/assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png';
+      const shareLink = environment.domainUrl + '/bund18/shareCard/' + localStorage.getItem('selectId');
 
-      //load from pre-load parameters, also from 3th party service   
+      // load from pre-load parameters, also from 3th party service
       wx.config({
         debug: false,
         appId: resp.appId.toString(),
@@ -59,14 +59,14 @@ export class DisplayComponent implements OnInit {
         nonceStr: resp.nonceStr.toString(),
         signature: resp.signature.toString(),
         jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-      });    
+      });
 
       wx.ready(() => {
         wx.onMenuShareTimeline({
           title: '摇一摇，摇出你的2019新年运势',
           link: shareLink,
           imgUrl: imageUrl,
-          success: () => {this.SendShareInfoToServer("moments");},
+          success: () => {this.SendShareInfoToServer('moments'); },
           cancel: () => {},
         }),
         wx.onMenuShareAppMessage({
@@ -75,8 +75,8 @@ export class DisplayComponent implements OnInit {
           link: shareLink,
           imgUrl: imageUrl,
           type: 'link',
-          success: ()=>{this.SendShareInfoToServer("friends");},
-          cancel: ()=>{},
+          success: () => {this.SendShareInfoToServer('friends'); },
+          cancel: () => {},
         })
       });
     });

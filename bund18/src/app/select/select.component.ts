@@ -9,8 +9,8 @@ import { RecordService } from '../_services/record.service';
 })
 export class SelectComponent implements OnInit {
   private highlightIcon = -1;
-  private showError = false;
-  private languageFlag = 'ch';
+  public showError = false;
+  public languageFlag = 'ch';
   private loading = false;
 
   constructor(
@@ -25,17 +25,17 @@ export class SelectComponent implements OnInit {
   private goToDisplayPage(imgSrc: String) {
     setTimeout(() => {
       this.loading = false;
-      this.router.navigate(['bund18/display/' + imgSrc]);
+      this.router.navigate(['display/' + imgSrc]);
     }, 500);
   }
 
-  private controlDevice(selectId: Number) {
+  private controlDevice(selectId: number) {
     if (this.loading) {
       return;
     }
     this.loading = true;
-    localStorage.setItem('selectId',selectId.toString());
-    this.recordService.controlDevice(selectId).subscribe(resp => {
+    localStorage.setItem('selectId',  selectId.toString());
+    this.recordService.openDevice(selectId).subscribe(resp => {
       this.showError = false;
       this.goToDisplayPage(`${selectId}.gif`);
     }, error => {
