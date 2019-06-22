@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  // recordUrl: 'http://40.74.242.24:8000/api/bund18/record/',
+  recordUrl: 'http://40.74.242.24:8000/api/bund18/record/',
   badgeUrl: 'http://40.74.242.24:8000/api/jjpark/badge/',
   shareUrl: 'http://40.74.242.24:8000/api/jjpark/share/',
   statUrl: 'http://40.74.242.24:8000/api/bund18/stat/',  
