@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecordService } from '../_services/record.service';
 
+import { RecordPost } from '../_models';
+
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
@@ -37,11 +39,30 @@ export class SelectComponent implements OnInit {
     localStorage.setItem('selectId',  selectId.toString());
     this.recordService.openDevice(selectId).subscribe(resp => {
       this.showError = false;
+
+      // Send visit record if success
+      const new_record: RecordPost = {
+        badgeID: parseInt(localStorage.getItem('badgeID')),
+        device: 'jjpark',
+        operation: 'select',
+        status: true
+      };
+      this.recordService.create(new_record).subscribe();
+
       this.goToDisplayPage(`${selectId}.gif`);
     }, error => {
       console.log(error);
       this.loading = false;
       this.showError = true;
+
+      // Send visit record if failed
+      const new_record: RecordPost = {
+        badgeID: parseInt(localStorage.getItem('badgeID')),
+        device: 'jjpark',
+        operation: 'select',
+        status: false
+      };
+      this.recordService.create(new_record).subscribe();
     });
   }
 

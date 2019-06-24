@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import * as wx from 'weixin-js-sdk';
 import { environment } from '../../environments/environment';
 import { ShareLogPost } from '../_models/share';
+import { RecordPost } from '../_models';
 
 @Component({
   selector: 'app-share',
