@@ -25,23 +25,20 @@ export class StartComponent implements OnInit {
     this.deviceInfo = this.deviceService.getDeviceInfo();
     this.tmpLog = `${this.deviceInfo.device}`;
 
-    //pre load wechat auth if using ios
-    if(`${this.deviceInfo.device}` == "iphone")
-    {
+    // pre load wechat auth if using ios
+    if (`${this.deviceInfo.device}` === 'iphone') {
       localStorage.setItem('isIOS', 'true');
 
-      //ios need to register at root
-      this.recordService.getWxParameters("start").subscribe((resp)=>{
+      // ios need to register at root
+      this.recordService.getWxParameters('start').subscribe((resp) => {
         localStorage.setItem('appId', resp.appId.toString());
         localStorage.setItem('nonceStr', resp.nonceStr.toString());
         localStorage.setItem('timestamp', resp.timestamp.toString());
         localStorage.setItem('signature', resp.signature.toString());
       });
-    }
-    else
-    {
+    } else {
       localStorage.setItem('isIOS', 'false');
-    } 
+    }
   }
 
   onClickEntry(languageFlag: string) {

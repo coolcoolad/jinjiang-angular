@@ -83,15 +83,15 @@ export class ShareComponent implements OnInit {
 
     wx.ready(() => {
       wx.onMenuShareTimeline({
-        title: '摇一摇，摇出你的2019新年运势',
+        title: '蝶.梦 梦径系列 锦江乐园主题灯光秀',
         link: shareLink,
         imgUrl: imageUrl,
         success: () => {this.SendShareInfoToServer( 'moments' ); },
         cancel: () => {},
       }),
       wx.onMenuShareAppMessage({
-        title: '摇一摇，摇出你的2019新年运势',
-        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
+        title: '蝶.梦 梦径系列',
+        desc: '锦江乐园主题灯光秀',
         link: shareLink,
         imgUrl: imageUrl,
         type: 'link',
