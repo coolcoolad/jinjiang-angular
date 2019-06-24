@@ -33,7 +33,7 @@ export class RecordService {
   }
 
   getDateStat() {
-    return this.http.get<RecordStat[]>(`${environment.statUrl}`, this.httpOptions);
+    return this.http.get<RecordStat[]>(`${environment.statDayUrl}`, this.httpOptions);
   }
 
   requestBadge(badge: BadgeRequest) {
