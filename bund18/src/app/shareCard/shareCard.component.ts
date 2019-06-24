@@ -16,10 +16,10 @@ export class ShareCardComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.id = Number.parseInt(this.activatedRoute.snapshot.params['id']);
+    this.id = parseInt(this.activatedRoute.snapshot.params['id']);
   }
 
   ngOnInit() {
-    
+
   }
 }

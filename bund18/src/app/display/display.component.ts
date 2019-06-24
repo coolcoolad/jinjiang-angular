@@ -24,16 +24,16 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    let isIOS = localStorage.getItem('isIOS');
-    if(isIOS == "false") {
-      this.recordService.getWxParameters("display").subscribe((resp)=>{
+    const isIOS = localStorage.getItem('isIOS');
+    if(isIOS === 'false') {
+      this.recordService.getWxParameters('display').subscribe((resp) => {
         localStorage.setItem('appId', resp.appId.toString());
         localStorage.setItem('nonceStr', resp.nonceStr.toString());
         localStorage.setItem('timestamp', resp.timestamp.toString());
         localStorage.setItem('signature', resp.signature.toString());
 
         this.SetupWechatShare();
-      });    
+      });
     } else {
       this.SetupWechatShare();
     }
@@ -52,7 +52,7 @@ export class DisplayComponent implements OnInit {
       operation: op,
     };
 
-    this.recordService.saveShareInfo(sharepost).subscribe(()=>{
+    this.recordService.saveShareInfo(sharepost).subscribe(() => {
       console.log('add one share info to database');
     }, error => {
       console.log(error);
@@ -61,9 +61,9 @@ export class DisplayComponent implements OnInit {
   }
 
   SetupWechatShare() {
-    const imageUrl = environment.domainUrl + '/assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png';
-    const shareLink = environment.domainUrl + '/bund18/shareCard/' + localStorage.getItem('selectId');
-    //load from pre-load parameters, also from 3th party service   
+    const imageUrl = environment.domainUrl + 'assets/H5/small_logo.jpg';
+    const shareLink = environment.domainUrl + 'shareCard/' + localStorage.getItem('selectId');
+    // load from pre-load parameters, also from 3th party service
     wx.config({
       debug: false,
       appId: localStorage.getItem('appId'),
@@ -71,19 +71,19 @@ export class DisplayComponent implements OnInit {
       nonceStr: localStorage.getItem('nonceStr'),
       signature: localStorage.getItem('signature'),
       jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-    });    
+    });
 
     wx.ready(() => {
       wx.onMenuShareTimeline({
-        title: '摇一摇，摇出你的2019新年运势',
+        title: '蝶.梦 梦径系列 锦江乐园主题灯光秀',
         link: shareLink,
         imgUrl: imageUrl,
         success: () => {this.SendShareInfoToServer( 'moments' ); },
         cancel: () => {},
       }),
       wx.onMenuShareAppMessage({
-        title: '摇一摇，摇出你的2019新年运势',
-        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
+        title: '蝶.梦 梦径系列',
+        desc: '锦江乐园主题灯光秀',
         link: shareLink,
         imgUrl: imageUrl,
         type: 'link',

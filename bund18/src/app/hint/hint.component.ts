@@ -32,7 +32,7 @@ export class HintComponent implements OnInit {
         device: `${this.deviceInfo.device}`,
         os: `${this.deviceInfo.os}`,
       }
-      this.recordService.requestBadge(badge).subscribe(resp=>{
+      this.recordService.requestBadge(badge).subscribe(resp => {
         localStorage.setItem('badgeID', resp.id.toString());
         this.router.navigate(['select']);
       }, error => {

@@ -11,5 +11,5 @@ export const environment = {
   licenseRequestUrl: 'http://www.fullrank.top:8000/api/jjpark/device/control/request',
   licenseReleaseUrl: 'http://www.fullrank.top:8000/api/jjpark/device/control/release',
   choiceReportUrl: 'http://www.fullrank.top:8000/api/jjpark/choice/report',
-  domainUrl: 'http://www.fullrank.top:8000/',
+  domainUrl: 'http://www.fullrank.top/',
 };
