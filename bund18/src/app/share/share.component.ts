@@ -11,7 +11,10 @@ import { ShareLogPost } from '../_models/share';
   styleUrls: ['./share.component.css']
 })
 export class ShareComponent implements OnInit {
-  public languageFlag = 'ch';
+  languageFlag = 'ch';
+  tmpLog = 'log';
+  tmpLog1 = 'log';
+  tmpLog2 = 'log';
 
   constructor(
     private recordService: RecordService,
@@ -26,21 +29,38 @@ export class ShareComponent implements OnInit {
     // Close the device
     this.recordService.closeDevice(selectId).subscribe();
 
-    this.SetupWechatShare();
+    let isIOS = localStorage.getItem('isIOS');
+    if(isIOS === 'false') {
+      this.recordService.getWxParameters('share').subscribe((resp) => {
+        localStorage.setItem('appId', resp.appId.toString());
+        localStorage.setItem('nonceStr', resp.nonceStr.toString());
+        localStorage.setItem('timestamp', resp.timestamp.toString());
+        localStorage.setItem('signature', resp.signature.toString());
+
+        this.tmpLog = `${localStorage.getItem('appId')}, ${localStorage.getItem('timestamp')}`;
+        this.tmpLog1 = `${localStorage.getItem('nonceStr')}, ${localStorage.getItem('signature')}`;
+
+        this.SetupWechatShare();
+      });
+    } else {
+      this.SetupWechatShare();
+    }
+
     this.recordService.releaseLicense(licenseId).subscribe(resp => {}, error => {console.log(error)});
-    setTimeout(() => {
-      this.router.navigate(['end']);
-    }, 3000);
+    // setTimeout(() => { //for test
+    //   this.router.navigate(['end']);
+    // }, 5000);
   }
 
   SendShareInfoToServer(op: string) {
+    this.tmpLog = 'SendShareInfoToServer';
     const sharepost: ShareLogPost = {
       badgeID: parseInt(localStorage.getItem('badgeID')),
       selectID: parseInt(localStorage.getItem('selectId')),
       operation: op,
     };
 
-    this.recordService.saveShareInfo(sharepost).subscribe(()=>{
+    this.recordService.saveShareInfo(sharepost).subscribe(() => {
       console.log('add one share info to database');
     }, error => {
       console.log(error);
@@ -49,39 +69,40 @@ export class ShareComponent implements OnInit {
   }
 
   SetupWechatShare() {
-    this.recordService.getWxParameters('share').subscribe((resp) => {
-      const imageUrl = environment.domainUrl + '/assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png';
-      const shareLink = environment.domainUrl + '/bund18/shareCard/' + localStorage.getItem('selectId');
+    const imageUrl = environment.domainUrl + '/assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png';
+    const shareLink = environment.domainUrl + '/bund18/shareCard/' + localStorage.getItem('selectId');
+    // load from pre-load parameters, also from 3th party service
+    wx.config({
+      debug: false,
+      appId: localStorage.getItem('appId'),
+      timestamp: localStorage.getItem('timestamp'),
+      nonceStr: localStorage.getItem('nonceStr'),
+      signature: localStorage.getItem('signature'),
+      jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+    });
 
-      // load from pre-load parameters, also from 3th party service
-      wx.config({
-        debug: false,
-        appId: resp.appId.toString(),
-        timestamp: resp.timestamp.toString(),
-        nonceStr: resp.nonceStr.toString(),
-        signature: resp.signature.toString(),
-        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
-      });
-
-      wx.ready(() => {
-        wx.onMenuShareTimeline({
-          title: '摇一摇，摇出你的2019新年运势',
-          link: shareLink,
-          imgUrl: imageUrl,
-          success: () => {this.SendShareInfoToServer( 'moments' ); },
-          cancel: () => {},
-        }),
-        wx.onMenuShareAppMessage({
-          title: '摇一摇，摇出你的2019新年运势',
-          desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
-          link: shareLink,
-          imgUrl: imageUrl,
-          type: 'link',
-          success: () => {this.SendShareInfoToServer('friends'); },
-          cancel: () => {},
-        })
+    wx.ready(() => {
+      wx.onMenuShareTimeline({
+        title: '摇一摇，摇出你的2019新年运势',
+        link: shareLink,
+        imgUrl: imageUrl,
+        success: () => {this.SendShareInfoToServer( 'moments' ); },
+        cancel: () => {},
+      }),
+      wx.onMenuShareAppMessage({
+        title: '摇一摇，摇出你的2019新年运势',
+        desc: 'BUND18的二重奏:外滩十八号圣诞新年艺术装置',
+        link: shareLink,
+        imgUrl: imageUrl,
+        type: 'link',
+        success: () => {this.SendShareInfoToServer('friends'); },
+        cancel: () => {},
       });
     });
+
+    wx.error((res) => {
+      this.tmpLog2 = res.errMsg.toString();
+    })
   }
 
 }
