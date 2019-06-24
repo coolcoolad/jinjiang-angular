@@ -1,11 +1,24 @@
 .parent{
   position: relative;
   text-align: center;
+  background-color: white;
+  height: 100%;
 }
 
-.big-img {
+.box {
+  position: fixed;
+  top: 100px;
+}
+
+.box img {
   width: 80%;
-  margin-top: 8%;
+  height: auto;
+}
+
+.card {
+  margin-top: 100px;
+  width: 80%;
+  height: auto;
 }
 
 .footer {

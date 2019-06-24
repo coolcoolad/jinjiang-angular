@@ -27,7 +27,7 @@ export class SelectComponent implements OnInit {
   private goToDisplayPage(imgSrc: String) {
     setTimeout(() => {
       this.loading = false;
-      this.router.navigate(['display/' + imgSrc]);
+      this.router.navigate(['display/']);
     }, 500);
   }
 

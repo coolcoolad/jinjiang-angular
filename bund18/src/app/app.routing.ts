@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'start', pathMatch: 'full', redirectTo: ''},
   { path: 'hint', pathMatch: 'full', component: HintComponent},
   { path: 'select', pathMatch: 'full', component: SelectComponent},
-  { path: 'display/:imgSrc', pathMatch: 'full', component: DisplayComponent },
+  { path: 'display', pathMatch: 'full', component: DisplayComponent },
   { path: 'share' , pathMatch: 'full', component: ShareComponent},
   { path: 'end' , pathMatch: 'full', component: EndComponent},
   { path: 'shareCard/:id', pathMatch: 'full', component: ShareCardComponent },

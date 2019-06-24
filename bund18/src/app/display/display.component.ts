@@ -20,10 +20,13 @@ export class DisplayComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private recordService: RecordService,
   ) {
-    this.imgSrc = this.pathPrefix + this.activatedRoute.snapshot.params['imgSrc'];
+    //this.imgSrc = this.pathPrefix + this.activatedRoute.snapshot.params['imgSrc'];
   }
 
   ngOnInit() {
+    const selectId = parseInt(localStorage.getItem('selectId'));
+    this.imgSrc = this.pathPrefix + selectId +'.gif';
+
     const isIOS = localStorage.getItem('isIOS');
     if(isIOS === 'false') {
       this.recordService.getWxParameters('display').subscribe((resp) => {
@@ -37,8 +40,6 @@ export class DisplayComponent implements OnInit {
     } else {
       this.SetupWechatShare();
     }
-
-    const selectId = parseInt(localStorage.getItem('selectId'));
     this.recordService.choiceReport(selectId).subscribe(resp => {}, error => {console.log(error)});
     setTimeout(() => {
       this.router.navigate(['share']);
