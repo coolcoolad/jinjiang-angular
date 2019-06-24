@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import * as wx from 'weixin-js-sdk';
 import { environment } from '../../environments/environment';
 import { ShareLogPost } from '../_models/share';
-import { RecordPost } from '../_models';
 
 @Component({
   selector: 'app-share',
@@ -50,7 +49,7 @@ export class ShareComponent implements OnInit {
   }
 
   SetupWechatShare() {
-    this.recordService.getWxParameters('welcome').subscribe((resp) => {
+    this.recordService.getWxParameters('share').subscribe((resp) => {
       const imageUrl = environment.domainUrl + '/assets/H5/Official_DreamOn_Logo_JJ_Col_Butterfly_Stack.png';
       const shareLink = environment.domainUrl + '/bund18/shareCard/' + localStorage.getItem('selectId');
 
