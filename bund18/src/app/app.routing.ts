@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: 'display', pathMatch: 'full', component: DisplayComponent },
   { path: 'share' , pathMatch: 'full', component: ShareComponent},
   { path: 'end' , pathMatch: 'full', component: EndComponent},
-  { path: 'shareCard/:id', component: ShareCardComponent },
+  { path: 'shareCard/:id', pathMatch: 'full', component: ShareCardComponent },
 
   { path: '**', redirectTo: '' },
 ];
