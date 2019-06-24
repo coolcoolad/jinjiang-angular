@@ -1,6 +1,7 @@
 <div class="parent">
   <img src="../../assets/H5/2-04.png" alt="Can't load this image" class="logo">
   <div class="buttons">
+    <div>{{tmpLog}}</div>
     <div *ngIf="waiting">排队中...Please wait...</div>
     <div>
       <input class="button" type="button" value="开始吧" (click)="onClickEntry('ch')" />
