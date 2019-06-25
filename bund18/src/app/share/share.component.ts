@@ -46,7 +46,12 @@ export class ShareComponent implements OnInit {
       this.SetupWechatShare();
     }
 
-    this.recordService.releaseLicense(licenseId).subscribe(resp => {}, error => {console.log(error)});
+    this.recordService.releaseLicense(licenseId).subscribe(resp => {
+      localStorage.removeItem('licenseId');
+    }, error => {
+      console.log(error);
+      localStorage.removeItem('licenseId');
+    });
     // setTimeout(() => { //for test
     //   this.router.navigate(['end']);
     // }, 5000);
