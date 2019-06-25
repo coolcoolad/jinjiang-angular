@@ -57,7 +57,7 @@ export class EndComponent implements OnInit {
   }
 
   SetupWechatShare() {
-    const imageUrl = environment.domainUrl + 'assets/H5/small_logo.jpg';
+    const imageUrl = environment.domainUrl + 'assets/H5/thumbnail.png';
     const shareLink = environment.domainUrl + 'shareCard/' + localStorage.getItem('selectId');
     // load from pre-load parameters, also from 3th party service
     wx.config({
