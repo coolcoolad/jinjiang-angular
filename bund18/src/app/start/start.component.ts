@@ -55,7 +55,7 @@ export class StartComponent implements OnInit {
       console.log(error);
 
       // this.waiting = false; //for test
-      // this.router.navigate(['hint']); 
+      // this.router.navigate(['hint']);
       // return;
 
       setTimeout(() => {

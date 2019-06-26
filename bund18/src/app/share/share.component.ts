@@ -26,8 +26,9 @@ export class ShareComponent implements OnInit {
     const selectId = parseInt(localStorage.getItem('selectId'));
     const licenseId = parseInt(localStorage.getItem('licenseId'));
 
+    // Move close device to display page
     // Close the device
-    this.recordService.closeDevice(selectId).subscribe();
+    // this.recordService.closeDevice(selectId).subscribe();
 
     let isIOS = localStorage.getItem('isIOS');
     if(isIOS === 'false') {

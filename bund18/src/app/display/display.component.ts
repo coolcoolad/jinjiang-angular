@@ -25,7 +25,7 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit() {
     const selectId = parseInt(localStorage.getItem('selectId'));
-    this.imgSrc = this.pathPrefix + selectId +'.gif';
+    this.imgSrc = this.pathPrefix + selectId + '.gif';
 
     const isIOS = localStorage.getItem('isIOS');
     if(isIOS === 'false') {
@@ -41,12 +41,18 @@ export class DisplayComponent implements OnInit {
       this.SetupWechatShare();
     }
     this.recordService.choiceReport(selectId).subscribe(resp => {}, error => {console.log(error)});
+
+    setTimeout(() => {
+      // Close the device
+      this.recordService.closeDevice(selectId).subscribe();
+    }, 1000);
+
     setTimeout(() => {
       this.router.navigate(['share']);
     }, 10000);
   }
 
-  SendShareInfoToServer(op:string) {
+  SendShareInfoToServer(op: string) {
     const sharepost: ShareLogPost = {
       badgeID: parseInt(localStorage.getItem('badgeID')),
       selectID: parseInt(localStorage.getItem('selectId')),
