@@ -12,6 +12,7 @@ import { RecordPost } from '../_models';
 export class SelectComponent implements OnInit {
   private highlightIcon = -1;
   public showError = false;
+  public showError1 = false;
   public languageFlag = 'ch';
   private loading = false;
 
@@ -33,6 +34,11 @@ export class SelectComponent implements OnInit {
 
   private controlDevice(selectId: number) {
     if (this.loading) {
+      return;
+    }
+    let licenseId = localStorage.getItem('licenseId');
+    if (licenseId === null) {
+      this.showError1 = true;
       return;
     }
     this.loading = true;

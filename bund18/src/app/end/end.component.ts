@@ -23,7 +23,7 @@ export class EndComponent implements OnInit {
     
     let isIOS = localStorage.getItem('isIOS');
     if(isIOS === 'false') {
-      this.recordService.getWxParameters('share').subscribe((resp) => {
+      this.recordService.getWxParameters('end').subscribe((resp) => {
         localStorage.setItem('appId', resp.appId.toString());
         localStorage.setItem('nonceStr', resp.nonceStr.toString());
         localStorage.setItem('timestamp', resp.timestamp.toString());
@@ -53,7 +53,7 @@ export class EndComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-    this.router.navigate(['end']);
+    //this.router.navigate(['end']);
   }
 
   SetupWechatShare() {
