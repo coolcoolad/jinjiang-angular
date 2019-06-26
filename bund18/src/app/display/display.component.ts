@@ -26,7 +26,7 @@ export class DisplayComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     const selectId = parseInt(localStorage.getItem('selectId'));
-    this.imgSrc = this.pathPrefix + selectId +'.gif';
+    this.imgSrc = this.pathPrefix + selectId + '.gif';
 
     const isIOS = localStorage.getItem('isIOS');
     if(isIOS === 'false') {
@@ -42,6 +42,10 @@ export class DisplayComponent implements OnInit, OnDestroy {
       this.SetupWechatShare();
     }
     this.recordService.choiceReport(selectId).subscribe(resp => {}, error => {console.log(error)});
+    setTimeout(() => {
+      // Close the device
+      this.recordService.closeDevice(selectId).subscribe();
+    }, 1000);
     this.timer = window.setTimeout(() => {
       this.router.navigate(['share']);
     }, 10000);
