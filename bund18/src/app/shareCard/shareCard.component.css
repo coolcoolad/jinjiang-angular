@@ -1,7 +1,6 @@
 .parent{
   position: relative;
   text-align: center;
-  background-color: white;
   height: 100%;
 }
 
@@ -11,7 +10,7 @@
 }
 
 .box img {
-  width: 80%;
+  width: 81%;
   height: auto;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ng2DeviceService } from 'ng2-device-detector';
 import { RecordService } from '../_services/record.service';
@@ -9,10 +9,11 @@ import { BadgeRequest } from '../_models';
   templateUrl: './hint.component.html',
   styleUrls: ['./hint.component.css']
 })
-export class HintComponent implements OnInit {
+export class HintComponent implements OnInit, OnDestroy {
   private deviceInfo;
   private valid: boolean;
-  public languageFlag = 'ch';
+  languageFlag = 'ch';
+  timer = null;
 
   constructor(
     private recordService: RecordService,
@@ -23,7 +24,7 @@ export class HintComponent implements OnInit {
   ngOnInit() {
     this.languageFlag = localStorage.getItem('languageFlag');
 
-    setTimeout(() => {
+    this.timer = window.setTimeout(() => {
       this.deviceInfo = this.deviceService.getDeviceInfo();
 
       const badge: BadgeRequest = {
@@ -41,4 +42,11 @@ export class HintComponent implements OnInit {
       });
     }, 3000);
   }
+  
+  ngOnDestroy(): void {
+    if (this.timer != null) {
+      window.clearTimeout(this.timer);
+    }
+  }
+
 }

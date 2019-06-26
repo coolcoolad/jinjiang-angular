@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-control" content="No-Cache">
+  <title>DREAM ON</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <style>
+    a { cursor: pointer }
+    html {
+      height: 100%;
+    }
+    body {
+      color: white;
+      background-color: black;
+      height: 100%;
+      margin: 0;
+    }
+    .center {
+      margin-top: 40%;
+    }
+    .parent{
+      position: relative;
+      text-align: center;
+      height: 100%;
+    }
+
+    .box {
+      position: fixed;
+      top: 100px;
+    }
+
+    .box img {
+      width: 81%;
+      height: auto;
+    }
+
+    .card {
+      margin-top: 100px;
+      width: 80%;
+      height: auto;
+    }
+    
+    .words {
+      position: fixed;
+      top: 390px;
+      width: 100%;
+      color: black;
+    }
+
+    .big-font {
+      font-size: 25px;
+      font-weight: bolder;
+    }
+
+    .small-font {
+      margin-top: 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="parent"> 
+        <div class="box">
+            <img src="./Postcards/Card_Corners-01.png" alt="Can't load this image"/>
+        </div>
+        <img class="card" src="./Postcards/Money_Postcard.png" alt="Can't load this image"/>
+        <div class="words">
+          <div class="big-font">闪闪惹人爱！</div>
+          <div class="small-font" id="ads">yyyy年mm月dd日中国上海锦江乐园‘梦径’</div>
+        </div>
+        <!-- <img *ngIf="id === 2" class="card" src="../../assets/PNG Assets H5/Postcards/Game_Postcard.png" alt="Can't load this image"/>
+        <img *ngIf="id === 3" class="card" src="../../assets/PNG Assets H5/Postcards/Love_Postcard-01.png" alt="Can't load this image"/>
+        <img *ngIf="id === 4" class="card" src="../../assets/PNG Assets H5/Postcards/Money_Postcard.png" alt="Can't load this image"/>
+        <img *ngIf="id === 5" class="card" src="../../assets/PNG Assets H5/Postcards/Space_Postcard.png" alt="Can't load this image"/>
+        <img *ngIf="id === 6" class="card" src="../../assets/PNG Assets H5/Postcards/Travel_Postcard.png" alt="Can't load this image"/> -->
+    </div>
+    <script>
+      var ads = document.getElementById("ads");
+      var date = new Date();
+      var text = ads.innerText;
+      text = text.replace("yyyy",date.getFullYear()+"");
+      text = text.replace("mm",date.getMonth()+1+"");
+      text = text.replace("dd",date.getDate()+"");
+      ads.innerText = text;
+    </script>
+</body>
+</html>

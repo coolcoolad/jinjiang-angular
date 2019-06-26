@@ -19,7 +19,7 @@ export class EndComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.languageFlag = localStorage.getItem('languageFlag');
+    //this.languageFlag = localStorage.getItem('languageFlag');
     
     let isIOS = localStorage.getItem('isIOS');
     if(isIOS === 'false') {

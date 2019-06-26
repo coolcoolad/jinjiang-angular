@@ -70,12 +70,12 @@ export class ShareComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-    this.router.navigate(['end']);
+    //this.router.navigate(['end']);
   }
 
   SetupWechatShare() {
     const imageUrl = environment.domainUrl + 'assets/H5/thumbnail.png';
-    const shareLink = environment.domainUrl + 'shareCard/' + localStorage.getItem('selectId');
+    const shareLink = environment.domainUrl + 'card' + localStorage.getItem('languageFlag') + localStorage.getItem('selectId') + '.html';
     // load from pre-load parameters, also from 3th party service
     wx.config({
       debug: false,

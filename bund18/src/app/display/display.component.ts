@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as wx from 'weixin-js-sdk';
 import { environment } from '../../environments/environment';
@@ -11,9 +11,10 @@ import { RecordService } from '../_services/record.service';
   styleUrls: ['./display.component.css']
 })
 
-export class DisplayComponent implements OnInit {
+export class DisplayComponent implements OnInit, OnDestroy {
   imgSrc = '';
   pathPrefix = '../../assets/gif/';
+  timer = null;
 
   constructor(
     private router: Router,
@@ -41,9 +42,15 @@ export class DisplayComponent implements OnInit {
       this.SetupWechatShare();
     }
     this.recordService.choiceReport(selectId).subscribe(resp => {}, error => {console.log(error)});
-    setTimeout(() => {
+    this.timer = window.setTimeout(() => {
       this.router.navigate(['share']);
     }, 10000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.timer != null) {
+      window.clearTimeout(this.timer);
+    }
   }
 
   SendShareInfoToServer(op:string) {
@@ -58,12 +65,12 @@ export class DisplayComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-    this.router.navigate(['end']);
+    //this.router.navigate(['end']);
   }
 
   SetupWechatShare() {
     const imageUrl = environment.domainUrl + 'assets/H5/thumbnail.png';
-    const shareLink = environment.domainUrl + 'shareCard/' + localStorage.getItem('selectId');
+    const shareLink = environment.domainUrl + 'card' + localStorage.getItem('languageFlag') + localStorage.getItem('selectId') + '.html';
     // load from pre-load parameters, also from 3th party service
     wx.config({
       debug: false,
