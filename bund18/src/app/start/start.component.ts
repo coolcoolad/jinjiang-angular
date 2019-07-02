@@ -60,7 +60,7 @@ export class StartComponent implements OnInit {
 
       setTimeout(() => {
         this.onClickEntry(languageFlag);
-      }, 2000);
+      }, (Math.random() * 2000));
     });
   }
 }
