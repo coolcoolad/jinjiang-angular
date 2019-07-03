@@ -1,6 +1,7 @@
 var imgList = [
 	"./assets/H5/Button_Eng_Cn.png",
 	"./assets/H5/2-04.png",
+	"./assets/H5/arrow-19.png",
 	"./assets/PNG Assets H5/Category Icons/AirPlane_Icon_Col.png",
 	"./assets/PNG Assets H5/Category Icons/AirPlane_Icon_Wht.png",
 	"./assets/PNG Assets H5/Category Icons/Cat_Icon_Col.png",
