@@ -4,7 +4,7 @@
 
 table {
     width: 100%;
-    margin-top: 3%;
+    margin-top: 0;
 }
 
 table td {
@@ -13,7 +13,7 @@ table td {
 
 table td img {
     width: 60%;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .left-col {

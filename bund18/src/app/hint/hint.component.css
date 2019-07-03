@@ -1,9 +1,10 @@
 .parent{
     position: relative;
+    width: 100%;
 }
 
 .big-font {
-    padding-top: 55%;
+    padding-top: 40%;
     text-align: center;
     font-size: 25px;
 }

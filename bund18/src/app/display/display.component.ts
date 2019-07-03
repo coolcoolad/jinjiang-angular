@@ -25,7 +25,8 @@ export class DisplayComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const selectId = parseInt(localStorage.getItem('selectId'));
+    var selectId = 1;
+    selectId = parseInt(localStorage.getItem('selectId'));
     this.imgSrc = this.pathPrefix + selectId + '.gif';
 
     const isIOS = localStorage.getItem('isIOS');
